@@ -1,0 +1,84 @@
+---
+// src/components/HowItWorks.astro
+---
+<section id="how-it-works" class="py-24 bg-white/50 border-y border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+            
+            <div class="ui-card rounded-2xl p-10 relative overflow-hidden group bg-slate-50/50 border-dashed border-slate-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="p-2.5 rounded-lg bg-red-50 text-red-500 border border-red-100">
+                        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 tracking-tight text-display">The Typical Headache</h3>
+                </div>
+                <ul class="space-y-6 text-slate-500">
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="snail" class="w-5 h-5 mt-0.5 text-slate-400"></i>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">Feels Slow</strong>
+                            Customers leave because pages take forever to load.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="wrench" class="w-5 h-5 mt-0.5 text-slate-400"></i>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">Always Breaking</strong>
+                            "Plugins" need updating. Things stop working. It's annoying.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <i data-lucide="search-x" class="w-5 h-5 mt-0.5 text-slate-400"></i>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">Invisible on Google</strong>
+                            You have a website, but nobody in your city can find it.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ui-card rounded-2xl p-10 relative overflow-hidden group bg-white shadow-card">
+                <div class="absolute top-0 right-0 p-8 opacity-[0.03] transform group-hover:scale-110 transition-transform duration-700">
+                    <i data-lucide="zap" class="w-40 h-40 text-slate-900"></i>
+                </div>
+                
+                <div class="flex items-center gap-4 mb-6 relative z-10">
+                    <div class="p-2.5 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
+                        <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 tracking-tight text-display">The Stegg Experience</h3>
+                </div>
+                <ul class="space-y-6 text-slate-600 relative z-10">
+                    <li class="flex items-start gap-4">
+                        <div class="mt-0.5 p-1 rounded-md bg-green-50 text-green-600">
+                            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">Lightning Fast</strong>
+                            Pages load instantly. Customers stay happy.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-0.5 p-1 rounded-md bg-green-50 text-green-600">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">We Handle Everything</strong>
+                            No updates. No crashes. We take care of the tech.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-0.5 p-1 rounded-md bg-green-50 text-green-600">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                        </div>
+                        <div>
+                            <strong class="text-slate-900 block text-sm mb-1">You Get Found</strong>
+                            We build pages so local customers actually see you.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>

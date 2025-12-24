@@ -1,0 +1,33 @@
+---
+// src/components/Navbar.astro
+---
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                <div class="relative flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-white shadow-lg">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                </div>
+                <span class="font-bold text-lg tracking-tight text-slate-900">Stegg.</span>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">How it works</a>
+                <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Pricing</a>
+                <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">FAQ</a>
+            </div>
+            
+            <div class="hidden md:flex items-center">
+                <a href="#pricing" class="btn-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold">
+                    Start Growth Engine
+                </a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button class="text-slate-600 hover:text-slate-900 p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
