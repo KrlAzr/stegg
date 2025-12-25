@@ -1,0 +1,50 @@
+---
+// src/pages/locations.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { locations } from '../data/targets';
+---
+
+<Layout title="Service Locations | Stegg">
+    <Navbar />
+    
+    <main class="pt-32 pb-20 bg-slate-50 min-h-screen">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-900 mb-4 text-display">Our Service Areas</h1>
+                <p class="text-slate-500">We have deployed Growth Engines in the following locations:</p>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {locations.map((loc) => (
+                    <a 
+                        href={`/web-design-${loc.slug}`}
+                        class="block p-6 bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all group"
+                    >
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    {loc.name}
+                                </h3>
+                                <span class="text-xs text-slate-500 font-medium bg-slate-100 px-2 py-1 rounded mt-1 inline-block">
+                                    {loc.state}
+                                </span>
+                            </div>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                    </a>
+                ))}
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm text-slate-400">
+                    Engine Status: <span class="text-emerald-500 font-bold">Active</span>. 
+                    Generating {locations.length} unique landing pages.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

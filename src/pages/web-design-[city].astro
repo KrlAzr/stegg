@@ -1,0 +1,88 @@
+---
+// src/pages/web-design-[city].astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+
+// 1. Import your data
+import { locations } from '../data/targets';
+
+// 2. Tell Astro which pages to generate (The "Loop")
+export function getStaticPaths() {
+  return locations.map((location) => {
+    return {
+      params: { city: location.slug },
+      props: { location },
+    };
+  });
+}
+
+// 3. Get the data for the current page
+const { location } = Astro.props;
+
+// 4. Create dynamic SEO metadata
+const pageTitle = `Web Design ${location.name} | High-Speed Growth Engine`;
+const pageDesc = `Looking for Web Design in ${location.name}? Stegg builds programmatic SEO websites that rank higher and load faster. Dominate the ${location.name} market today.`;
+---
+
+<Layout title={pageTitle}>
+    <Navbar />
+    
+    <main>
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px]"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">
+                    Serving {location.name}, {location.state}
+                </span>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.15] text-display">
+                    Web Design in <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{location.name}</span><br />
+                    that actually ranks.
+                </h1>
+
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-slate-400 leading-relaxed font-medium">
+                    {location.intro} Stop losing {location.name} customers to slow websites. Get a Stegg Growth Engine today.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#pricing" class="btn-primary bg-white text-slate-900 hover:bg-slate-100 px-8 py-3.5 rounded-lg font-semibold text-base">
+                        Get a Quote for {location.name}
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <article class="prose prose-lg prose-slate mx-auto">
+                    <h3>Why businesses in {location.name} need a faster website</h3>
+                    <p>
+                        The digital landscape in <strong>{location.name}</strong> is becoming more competitive every day. 
+                        Whether you are serving customers in the city center or the surrounding {location.state} area, 
+                        relying on word-of-mouth is no longer enough.
+                    </p>
+                    <p>
+                        At Stegg, we don't just build "brochure websites." We build <strong>Programmatic SEO engines</strong> customized for the {location.name} market.
+                        Our technology ensures that when someone searches for services in {location.name}, your business shows up.
+                    </p>
+                    <ul>
+                        <li><strong>Local Schema:</strong> We tag your site so Google knows you operate specifically in {location.name}.</li>
+                        <li><strong>Speed:</strong> We guarantee sub-second load times for users on mobile data in {location.name}.</li>
+                        <li><strong>Dominance:</strong> While your competitors fight for one keyword, we help you capture the entire {location.state} area.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <CTA />
+        
+    </main>
+
+    <Footer />
+</Layout>
