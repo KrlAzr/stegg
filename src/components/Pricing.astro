@@ -1,137 +1,162 @@
 ---
 // src/components/Pricing.astro
 ---
-<section id="pricing" class="py-32 relative bg-white border-t border-slate-200">
+<section class="py-24 bg-slate-50 border-t border-slate-200" id="pricing">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl font-bold text-slate-900 mb-6 tracking-tight text-display">Transparent Pricing.</h2>
-            <p class="text-slate-500 text-lg">Pay once. Keep it forever. No monthly subscriptions.</p>
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight text-display">
+                One Investment. <br>
+                <span class="text-blue-600">Infinite Traffic.</span>
+            </h2>
+            <p class="text-slate-500 text-lg leading-relaxed">
+                Build an asset you own. No hidden monthly maintenance fees.
+            </p>
         </div>
 
-        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+        <div class="grid lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
             
-            <div class="ui-card rounded-2xl p-10 hover:border-slate-300 flex flex-col relative bg-slate-50/50">
-                <div class="absolute top-0 right-0 left-0 -mt-3 flex justify-center">
-                    <span class="bg-emerald-100 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Ready in 1-3 Days</span>
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg relative flex flex-col h-full hover:border-blue-300 transition-colors">
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold text-slate-900">The Launchpad</h3>
+                    <p class="text-slate-500 text-xs mt-2 min-h-[32px]">Perfect for new businesses needing a professional start.</p>
                 </div>
-                
-                <h3 class="text-xl font-bold text-slate-900 mt-2">Launchpad</h3>
-                <p class="mt-2 text-sm text-slate-500 leading-relaxed min-h-[40px]">For businesses that need a professional, high-speed presence instantly.</p>
-                
-                <div class="mt-6 flex items-baseline">
-                    <span class="text-sm font-semibold text-slate-500 align-top">RM</span>
-                    <span class="text-5xl font-bold text-slate-900 tracking-tight">2,800</span>
-                    <span class="text-sm text-slate-500 ml-2 font-medium">/one-time</span>
-                </div>
-                
-                <div class="w-full h-px bg-slate-200 my-8"></div>
 
-                <ul class="space-y-5 flex-grow">
-                    <li class="flex items-start gap-3 text-slate-700 text-sm">
-                        <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i> 
-                        <span>Ultra-Fast Single Page Site</span>
+                <div class="mb-6 flex items-baseline gap-1">
+                    <span class="text-3xl font-bold text-slate-900">RM 2,800</span>
+                    <span class="text-slate-400 text-xs font-medium">One-time</span>
+                </div>
+
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-2 text-xs text-slate-700">
+                        <i data-lucide="layout" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                        <span><strong>High-Impact Single Page Site</strong></span>
                     </li>
-                    <li class="flex items-start gap-3 text-slate-700 text-sm">
-                        <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i> 
-                        <span>WhatsApp Conversion Button</span>
+                    <li class="flex items-start gap-2 text-xs text-slate-700">
+                        <i data-lucide="zap" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                        <span>Lightning Fast & Secure Hosting</span>
                     </li>
-                    <li class="flex items-start gap-3 text-slate-700 text-sm">
-                        <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i> 
-                        <span>3 Dynamic Location Pages <span class="text-slate-400 text-xs block">(e.g., "Service + Area")</span></span>
+                    <li class="flex items-start gap-2 text-xs text-slate-700">
+                        <i data-lucide="trending-up" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                        <span><strong>10 Programmatic SEO Pages</strong> Included</span>
                     </li>
-                    <li class="flex items-start gap-3 text-slate-700 text-sm">
-                        <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i> 
-                        <span>Basic SEO Meta Tags</span>
+                    <li class="flex items-start gap-2 text-xs text-slate-700">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                        <span>Direct-to-WhatsApp Setup</span>
                     </li>
-                     <li class="flex items-start gap-3 text-slate-700 text-sm">
-                        <i data-lucide="check" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"></i> 
-                        <span>&lt;1s Load Time Guarantee</span>
+                     <li class="flex items-start gap-2 text-xs text-slate-700">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                        <span>Mobile Responsive Design</span>
                     </li>
                 </ul>
-                <a href="#" class="block w-full mt-10 py-4 px-6 rounded-lg bg-white border border-slate-200 text-slate-900 font-bold text-center hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
-                    Choose Launchpad
+
+                <a href="#contact" class="w-full block text-center bg-white border-2 border-slate-200 text-slate-600 font-bold py-3 rounded-xl hover:bg-slate-50 transition-colors text-sm">
+                    Build Launchpad
                 </a>
             </div>
 
-            <div class="ui-card rounded-2xl p-10 relative border-blue-500 shadow-[0_0_50px_rgba(37,99,235,0.15)] bg-white flex flex-col transform md:-translate-y-4 md:scale-105 z-10">
-                <div class="absolute top-0 right-0 left-0 -mt-3 flex justify-center gap-2">
-                    <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg shadow-blue-600/30">Best Value</span>
-                    <span class="bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Delivery: 5-7 Days</span>
+            <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-2xl relative flex flex-col h-full transform lg:-translate-y-4 z-10">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                    Most Popular
                 </div>
-                
-                <h3 class="text-2xl font-bold text-blue-900 mt-4">Market Dominator</h3>
-                <p class="mt-2 text-sm text-slate-600 leading-relaxed min-h-[40px]">The complete programmatic SEO engine. Capture traffic from every town in your state.</p>
-                
-                <div class="mt-6 flex items-baseline">
-                    <span class="text-sm font-semibold text-blue-900/60 align-top">RM</span>
-                    <span class="text-6xl font-extrabold text-slate-900 tracking-tight">4,800</span>
-                    <span class="text-sm text-blue-900/60 ml-2 font-medium">/one-time</span>
-                </div>
-                
-                <div class="w-full h-px bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 my-8"></div>
 
-                <ul class="space-y-5 flex-grow">
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-100 text-blue-600 mt-0.5"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <span>5 Core Brand Pages <span class="text-slate-500 text-xs font-normal block">(Home, About, Services, etc.)</span></span>
-                    </li>
-                    
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-600 text-white mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <div class="flex flex-col items-start">
-                            <div class="flex items-center gap-1.5 bg-blue-50 px-2 py-0.5 rounded -ml-2">
-                                <span class="text-blue-700 font-bold">50+ Dynamic SEO Landing Pages</span>
-                                <div class="flex items-center gap-2">
-                                    <button onclick="document.getElementById('tech').scrollIntoView({behavior: 'smooth'})" class="text-blue-600 underline text-xs hover:text-blue-800 cursor-pointer font-normal whitespace-nowrap decoration-dotted hover:decoration-solid">
-                                        (See how it works)
-                                    </button>
-                                </div>
-                            </div>
-                            <span class="text-blue-600/70 text-xs font-normal block mt-0.5 ml-0">The main value</span>
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white">Market Dominator</h3>
+                    <p class="text-slate-400 text-xs mt-2 min-h-[32px]">The "Full Stack". A complete authority site + The massive growth engine.</p>
+                </div>
+
+                <div class="mb-6 flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-white">RM 4,800</span>
+                    <span class="text-slate-400 text-xs font-medium">One-time</span>
+                </div>
+
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-start gap-3 text-sm text-white font-medium">
+                        <i data-lucide="layout-template" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
+                        <div>
+                            <strong>3-Page Official Website</strong>
+                            <p class="text-slate-400 text-xs font-normal mt-0.5">(Home, About, Services)</p>
                         </div>
                     </li>
-
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-100 text-blue-600 mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <div class="flex items-center gap-1.5">
-                            <span>Advanced Local Schema Markup</span>
-                            <div class="relative group inline-flex items-center">
-                                <i data-lucide="info" class="w-3.5 h-3.5 text-slate-400 cursor-help hover:text-blue-500 transition-colors"></i>
-                                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 pointer-events-none">
-                                    <p class="text-xs text-slate-200 leading-relaxed font-normal">Hidden digital ID code that forces Google to verify your location and business details instantly, helping you rank higher.</p>
-                                    <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="globe" class="w-5 h-5 text-blue-400 shrink-0"></i>
+                        <span><strong>50+ Programmatic SEO Pages</strong></span>
                     </li>
-
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-100 text-blue-600 mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <span>Competitor Keyword Analysis</span>
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="zap" class="w-5 h-5 text-blue-400 shrink-0"></i>
+                        <span>Lightning Fast & Secure Hosting</span>
                     </li>
-
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-100 text-blue-600 mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <span>Visitor Stats Dashboard</span>
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-blue-400 shrink-0"></i>
+                        <span>Direct-to-WhatsApp Setup</span>
                     </li>
-
-                    <li class="flex items-start gap-3 text-slate-900 font-medium text-sm">
-                        <div class="p-0.5 rounded-full bg-blue-100 text-blue-600 mt-0.5 flex-shrink-0"><i data-lucide="check" class="w-3.5 h-3.5"></i></div> 
-                        <span>Priority Support</span>
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-blue-400 shrink-0"></i>
+                        <span>Mobile Responsive Design</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-slate-300">
+                        <i data-lucide="search" class="w-5 h-5 text-blue-400 shrink-0"></i>
+                        <span>Technical SEO & Schema Setup</span>
                     </li>
                 </ul>
-                <a href="#" class="block w-full mt-10 py-4 px-6 btn-primary text-white font-bold text-lg rounded-lg text-center shadow-lg shadow-blue-900/20 transform transition-all hover:-translate-y-1">
-                    Dominate Your Market
+
+                <a href="#contact" class="w-full block text-center bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-500 transition-colors text-sm">
+                    Dominate Local Search
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border border-cyan-200 shadow-lg relative flex flex-col h-full">
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="text-lg font-bold text-cyan-900">Sidecar</h3>
+                        <span class="bg-cyan-200 text-cyan-800 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Add-on Engine</span>
+                    </div>
+                    <p class="text-cyan-700/80 text-xs mt-2 min-h-[32px]">Already have a website? Plug this engine in for traffic.</p>
+                </div>
+
+                <div class="mb-6 flex items-baseline gap-1">
+                    <span class="text-3xl font-bold text-cyan-900">RM 2,200</span>
+                    <span class="text-cyan-600 text-xs font-medium">One-time</span>
+                </div>
+
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-start gap-2 text-xs text-cyan-800">
+                        <i data-lucide="globe" class="w-4 h-4 text-cyan-600 shrink-0"></i>
+                        <span><strong>50+ Programmatic SEO Pages</strong></span>
+                    </li>
+                    <li class="flex items-start gap-2 text-xs text-cyan-800">
+                        <i data-lucide="server" class="w-4 h-4 text-cyan-600 shrink-0"></i>
+                        <span>Hosted on Independent Server</span>
+                    </li>
+                    <li class="flex items-start gap-2 text-xs text-cyan-800">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-cyan-600 shrink-0"></i>
+                        <span><strong>WhatsApp Conversion Funnel</strong></span>
+                    </li>
+                     <li class="flex items-start gap-2 text-xs text-cyan-800">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-cyan-600 shrink-0"></i>
+                        <span>100% Safe (No Login Needed)</span>
+                    </li>
+                    <li class="flex items-start gap-2 text-xs text-cyan-800">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4 text-cyan-600 shrink-0"></i>
+                        <span>Monthly Traffic Reporting</span>
+                    </li>
+                </ul>
+
+                <a href="#contact" class="w-full block text-center bg-white border-2 border-cyan-200 text-cyan-700 font-bold py-3 rounded-xl hover:bg-cyan-50 hover:border-cyan-300 transition-colors text-sm">
+                    Add Engine Only
                 </a>
             </div>
 
         </div>
 
-        <div class="mt-16 text-center">
-            <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-sm font-medium shadow-sm">
-                <i data-lucide="credit-card" class="w-4 h-4 text-blue-600"></i>
-                50% Deposit to Start. 50% on Launch.
-            </div>
+        <div class="mt-12 text-center max-w-3xl mx-auto bg-blue-50 rounded-2xl p-6 border border-blue-100">
+            <h4 class="text-sm font-bold text-blue-900 mb-2 flex items-center justify-center gap-2">
+                <i data-lucide="info" class="w-4 h-4"></i> Domain Ownership
+            </h4>
+            <p class="text-xs text-blue-800/80 leading-relaxed">
+                To ensure you maintain 100% ownership of your brand, <strong>the custom domain name (e.g., yourbusiness.com) is provided by you</strong>. 
+                If you are new to this, we can assist with the purchase process, but you will hold the account and ownership.
+            </p>
         </div>
 
     </div>

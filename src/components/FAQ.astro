@@ -1,28 +1,87 @@
 ---
 // src/components/FAQ.astro
 ---
-<section id="faq" class="py-32 relative bg-slate-50">
+
+<section class="py-24 bg-white border-t border-slate-200" id="faq">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight text-display">Questions?</h2>
-            <p class="text-slate-500">No tech jargon, promised.</p>
+        
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight">
+                Common Questions
+            </h2>
+            <p class="text-slate-500">
+                Everything you need to know about pricing, timeline, and tech.
+            </p>
         </div>
 
         <div class="space-y-4">
-            <div class="ui-card rounded-xl p-6 bg-white cursor-pointer hover:border-slate-300">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">Do I really own the website?</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">Yes, 100%. Unlike some agencies that "rent" you a website, once you pay, it is yours forever. You own the domain, the code, and the content.</p>
-            </div>
+            
+            <details name="faq-group" class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden open:bg-white open:shadow-lg transition-all duration-300">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-slate-900 font-bold text-lg">
+                    <span>Why is this better than Google Ads?</span>
+                    <span class="transition-transform group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    Google Ads is like <strong>renting</strong>. You pay every month, and the moment you stop paying, the traffic stops. 
+                    Stegg is like <strong>buying property</strong>. You pay once to build the asset, and it generates organic traffic for years with minimal maintenance.
+                </div>
+            </details>
 
-            <div class="ui-card rounded-xl p-6 bg-white cursor-pointer hover:border-slate-300">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">What if I need to change a phone number or price later?</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">For small changes, just text us. We handle minor updates for free for the first year. For larger changes, we have affordable maintenance packs, or we can teach you how to do it.</p>
-            </div>
+            <details name="faq-group" class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden open:bg-white open:shadow-lg transition-all duration-300">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-slate-900 font-bold text-lg">
+                    <span>I have a website. Do I need to delete it?</span>
+                    <span class="transition-transform group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <strong>No.</strong> That is what the <strong>Sidecar</strong> plan is for. We build a "Marketing Wing" that runs parallel to your main site. 
+                    We use a "Zero-Touch" integration, meaning we don't need your login password and we don't touch your existing code. We simply funnel the new traffic to your WhatsApp.
+                </div>
+            </details>
 
-            <div class="ui-card rounded-xl p-6 bg-white cursor-pointer hover:border-slate-300">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">How long does it take to build?</h3>
-                <p class="text-slate-600 leading-relaxed text-sm">Because we don't use clunky templates, we move fast. Most "Starter" and "Local Growth" sites are live within 7-10 days after we get your details.</p>
-            </div>
+            <details name="faq-group" class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden open:bg-white open:shadow-lg transition-all duration-300">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-slate-900 font-bold text-lg">
+                    <span>Are there really no monthly fees?</span>
+                    <span class="transition-transform group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    There are <strong>no management fees</strong>. You pay the one-time build fee. 
+                    After the first 12 months, there is a standard <strong>RM 600/year</strong> fee to cover server hosting, security updates, and keeping your site online. That's it.
+                </div>
+            </details>
+
+             <details name="faq-group" class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden open:bg-white open:shadow-lg transition-all duration-300">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-slate-900 font-bold text-lg">
+                    <span>Who pays for the Domain Name?</span>
+                    <span class="transition-transform group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    <strong>You do.</strong> We insist that you purchase the domain (e.g., `yourbusiness.com`) yourself so that <strong>you own 100% of the asset</strong>. 
+                    It costs about RM 80/year. If you don't know how, we will guide you through it, but the account will be yours.
+                </div>
+            </details>
+
+            <details name="faq-group" class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden open:bg-white open:shadow-lg transition-all duration-300">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none text-slate-900 font-bold text-lg">
+                    <span>How long does it take to see results?</span>
+                    <span class="transition-transform group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                    Unlike ads (which are instant but expensive), SEO is an investment. You will typically see pages indexing within 2-4 weeks. 
+                    Significant traffic growth usually happens between months 3-6 as Google trusts the new content.
+                </div>
+            </details>
+
         </div>
+
     </div>
 </section>
