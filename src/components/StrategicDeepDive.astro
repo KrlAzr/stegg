@@ -1,100 +1,124 @@
 ---
 // src/components/StrategicDeepDive.astro
 ---
-<section class="py-24 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-24 bg-[#0B1120] text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] opacity-5 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight text-display">
-                Four questions smart owners ask us.
-            </h2>
-            <p class="text-slate-500 text-lg leading-relaxed">
-                You have built a successful business. You are skeptical of "magic bullets." We respect that. Here is the honest truth.
-            </p>
-        </div>
+        <div class="text-center max-w-3xl mx-auto mb-20">
+    <h2 class="text-blue-400 font-bold tracking-widest text-xs uppercase mb-4">
+        The Reality Check
+    </h2>
+    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+        Questions smart owners ask. <br>
+        <span class="text-slate-500">And the honest answers.</span>
+    </h3>
+    <p class="text-slate-400 text-lg leading-relaxed">
+        You’ve built a successful business. You are skeptical of "magic bullets." We respect that. Here is the truth about owned assets vs. rented land.
+    </p>
+</div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6">
             
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 shrink-0">
-                    <i data-lucide="smartphone" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-4 h-auto md:h-14 flex items-center">
-                    "I get all my clients from Instagram. Why do I need a website?"
-                </h3>
-                <div class="text-slate-600 leading-relaxed text-sm space-y-4">
-                    <p>
-                        <strong>Social Media is "Attention". Google is "Intention".</strong>
-                    </p>
-                    <p>
-                        People scroll Instagram to kill time. They search Google to solve a problem.
-                    </p>
-                    <p class="text-slate-900 font-medium pt-2 border-t border-slate-100">
-                        When a client searches "Anxiety Therapy Subang", they are holding their credit card, ready to book. That is the high-intent traffic you are currently missing.
-                    </p>
+            <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-purple-500/50 group-hover:bg-purple-900/20 transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6 text-slate-400 group-hover:text-purple-400"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-500/10 text-purple-300 text-[10px] font-bold uppercase tracking-wider rounded-full border border-purple-500/20">Social Media</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white mb-4">"I get clients from Instagram. Why do I need a website?"</h4>
+                    
+                    <div class="space-y-4">
+                        <p class="text-purple-200 text-sm font-medium">
+                            Social Media is "Attention". Google is "Intention".
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                            People scroll Instagram to kill time. They search Google to solve a problem. <br><br>
+                            When a client searches <em>"Anxiety Therapy Subang"</em>, they are holding their credit card, ready to book. That is the <strong>high-intent traffic</strong> you are currently missing.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col">
-                <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-6 shrink-0">
-                    <i data-lucide="star" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-4 h-auto md:h-14 flex items-center">
-                    "I already have 1,000+ Google Reviews. Why do I need this?"
-                </h3>
-                <div class="text-slate-600 leading-relaxed text-sm space-y-4">
-                    <p>
-                        <strong>Reviews are your Reputation. Stegg is your Reach.</strong>
-                    </p>
-                    <p>
-                        Your reviews are amazing, but they are stuck on a "leash." Google Maps prioritizes distance. If a customer is 8km away, Google hides you—no matter how many stars you have.
-                    </p>
-                    <p class="text-slate-900 font-medium pt-2 border-t border-slate-100">
-                        Stegg puts you in front of people who are too far for the Map, but willing to travel for quality.
-                    </p>
+            <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:border-yellow-500/50 transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-yellow-500/50 group-hover:bg-yellow-900/20 transition-colors">
+                            <i data-lucide="star" class="w-6 h-6 text-slate-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-300 text-[10px] font-bold uppercase tracking-wider rounded-full border border-yellow-500/20">Reputation</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white mb-4">"I have 1,000+ Google Reviews. Why do I need this?"</h4>
+                    
+                    <div class="space-y-4">
+                        <p class="text-yellow-200 text-sm font-medium">
+                            Reviews are your Reputation. Stegg is your Reach.
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Your reviews are amazing, but they are stuck on a "leash." Google Maps prioritizes distance. If a customer is 8km away, Google hides you—no matter how many stars you have.<br><br>
+                            Stegg puts you in front of people who are <strong>too far for the Map</strong>, but willing to travel for quality.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col">
-                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 shrink-0">
-                    <i data-lucide="map" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-4 h-auto md:h-14 flex items-center">
-                    "Will this help my Google Map ranking too?"
-                </h3>
-                <div class="text-slate-600 leading-relaxed text-sm space-y-4">
-                    <p>
-                        <strong>Yes, absolutely.</strong>
-                    </p>
-                    <p>
-                        Google looks for "Prominence." When our pages start driving traffic from neighborhoods like <em>Mont Kiara</em> to your site, it sends a signal to Google: <em class="italic">"This business is relevant to that neighborhood."</em>
-                    </p>
-                    <p class="text-slate-900 font-medium pt-2 border-t border-slate-100">
-                        Over time, this organic traffic helps "stretch" your Map radius, helping you rank in the Map Pack further from your HQ.
-                    </p>
+            <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-blue-500/50 group-hover:bg-blue-900/20 transition-colors">
+                            <i data-lucide="map" class="w-6 h-6 text-slate-400 group-hover:text-blue-400"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-300 text-[10px] font-bold uppercase tracking-wider rounded-full border border-blue-500/20">Synergy</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white mb-4">"Will this help my Google Map ranking too?"</h4>
+                    
+                    <div class="space-y-4">
+                        <p class="text-blue-200 text-sm font-medium">
+                            Yes. It acts as a signal flare to Google.
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Google looks for "Prominence." When our pages start driving traffic from neighborhoods like <em>Mont Kiara</em> to your site, it signals: <em class="italic text-slate-300">"This business is relevant to that neighborhood."</em><br><br>
+                            This organic traffic helps <strong>stretch your Map radius</strong>.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow flex flex-col">
-                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 shrink-0">
-                    <i data-lucide="check-circle-2" class="w-6 h-6"></i>
-                </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-4 h-auto md:h-14 flex items-center">
-                    "Does this really work? It sounds too simple."
-                </h3>
-                <div class="text-slate-600 leading-relaxed text-sm space-y-4">
-                    <p>
-                        <strong>It works because it's boring math.</strong>
-                    </p>
-                    <p>
-                        Google is a robot. It wants to give the searcher the <em>exact</em> match.
-                    </p>
-                    <p>
-                        If someone searches "Your Service + Location", and you have a page titled exactly <strong>"Your Service + Location"</strong>, you mathematically beat a competitor who just has a generic "Home" page.
-                    </p>
-                    <p class="text-slate-900 font-medium pt-2 border-t border-slate-100">
-                        We just automate the "boring work" of creating those perfect matches.
-                    </p>
+            <div class="group relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm hover:border-green-500/50 transition-all duration-300">
+                <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-green-500/50 group-hover:bg-green-900/20 transition-colors">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-slate-400 group-hover:text-green-400"></i>
+                        </div>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-300 text-[10px] font-bold uppercase tracking-wider rounded-full border border-green-500/20">The Logic</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white mb-4">"Does this really work? It sounds too simple."</h4>
+                    
+                    <div class="space-y-4">
+                        <p class="text-green-200 text-sm font-medium">
+                            It works because it's boring math.
+                        </p>
+                        <p class="text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                            Google is a robot. It wants to give the searcher the exact match. If someone searches "Service + Location", and you have a page titled exactly <strong>"Service + Location"</strong>, you mathematically beat a generic "Home" page.<br><br>
+                            We just automate the "boring work" of creating those perfect matches.
+                        </p>
+                    </div>
                 </div>
             </div>
 
