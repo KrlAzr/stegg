@@ -1,218 +1,70 @@
 ---
-// src/pages/[service]-in-[location].astro
+import Layout from '../layouts/Layout.astro';
+import Contact from '../components/Contact.astro';
+import { SERVICES } from '../data/services';   // <--- THIS WAS MISSING
+import { LOCATIONS } from '../data/locations'; // <--- THIS WAS MISSING
 
-// 1. DATA: The "Money" Variables
-const LOCATIONS = [
-  { name: "Subang Jaya", slug: "subang-jaya", state: "Selangor" },
-  { name: "Petaling Jaya", slug: "petaling-jaya", state: "Selangor" },
-  { name: "Mont Kiara", slug: "mont-kiara", state: "Kuala Lumpur" },
-  { name: "Bangsar", slug: "bangsar", state: "Kuala Lumpur" },
-  { name: "TTDI", slug: "ttdi", state: "Kuala Lumpur" },
-  { name: "Puchong", slug: "puchong", state: "Selangor" },
-  { name: "Shah Alam", slug: "shah-alam", state: "Selangor" },
-  { name: "Klang", slug: "klang", state: "Selangor" },
-  { name: "Damansara", slug: "damansara", state: "Selangor" },
-  { name: "Cheras", slug: "cheras", state: "Kuala Lumpur" },
-  { name: "Kota Damansara", slug: "kota-damansara", state: "Selangor" },
-  { name: "Ara Damansara", slug: "ara-damansara", state: "Selangor" },
-  { name: "Setia Alam", slug: "setia-alam", state: "Selangor" },
-  { name: "Kota Kemuning", slug: "kota-kemuning", state: "Selangor" },
-  { name: "Kepong", slug: "kepong", state: "Kuala Lumpur" },
-  { name: "Sri Petaling", slug: "sri-petaling", state: "Kuala Lumpur" },
-  { name: "Ampang", slug: "ampang", state: "Selangor" },
-  { name: "Cyberjaya", slug: "cyberjaya", state: "Selangor" },
-  { name: "Desa ParkCity", slug: "desa-parkcity", state: "Kuala Lumpur" },
-  { name: "Sunway", slug: "sunway", state: "Selangor" }
-];
-
-const SERVICES = [
-  // SILO 1: HEALTHCARE
-  { name: "Clinic Website Design", slug: "clinic-website-design", silo: "healthcare", target: "Doctors" },
-  { name: "Dental Marketing Agency", slug: "dental-marketing-agency", silo: "healthcare", target: "Dentists" },
-  { name: "SEO for Doctors", slug: "seo-for-doctors", silo: "healthcare", target: "Specialists" },
-  
-  // SILO 2: AGENTS
-  { name: "Insurance Agent Website", slug: "insurance-agent-website", silo: "agents", target: "Insurance Agents" },
-  { name: "Property Agent Marketing", slug: "property-agent-marketing", silo: "agents", target: "RENs" },
-  { name: "Agent Personal Branding", slug: "agent-personal-branding", silo: "agents", target: "Top Agents" },
-
-  // SILO 3: CONTRACTORS
-  { name: "Contractor Website Design", slug: "contractor-website-design", silo: "contractors", target: "Contractors" },
-  { name: "Interior Design Marketing", slug: "interior-design-marketing", silo: "contractors", target: "Interior Designers" },
-  { name: "Renovation Leads", slug: "renovation-leads", silo: "contractors", target: "Contractors" },
-
-  // SILO 4: PROFESSIONALS
-  { name: "Law Firm Web Design", slug: "law-firm-web-design", silo: "professionals", target: "Lawyers" },
-  { name: "SEO for Accountants", slug: "seo-for-accountants", silo: "professionals", target: "Accountants" }
-];
-
-// 2. LOGIC: Generate all 240+ Paths
 export async function getStaticPaths() {
-  const paths = [];
-  
-  // Combine every service with every location
-  SERVICES.forEach(service => {
-    LOCATIONS.forEach(location => {
-      paths.push({
-        params: { 
-          service: service.slug, 
-          location: location.slug 
-        },
-        props: { 
-          serviceName: service.name,
-          locationName: location.name,
-          silo: service.silo,
-          targetAudience: service.target,
-          state: location.state
-        },
-      });
-    });
-  });
-
-  return paths;
+  // Generate a path for every combination of Service + Location
+  // e.g. /web-design-in-subang-jaya, /seo-in-klang
+  return SERVICES.flatMap(service =>
+    LOCATIONS.map(location => ({
+      params: { 
+        service: service.slug, 
+        location: location.slug 
+      },
+      props: { service, location },
+    }))
+  );
 }
 
-const { serviceName, locationName, silo, targetAudience, state } = Astro.props;
+const { service, location } = Astro.props;
 
-// 3. THE BRAIN: Dynamic Copywriting based on Silo
-const copy = {
-  healthcare: {
-    hero: `Stop Losing Patients in ${locationName}.`,
-    subhead: `The specialized marketing engine for ${targetAudience}. Fill your appointment slots without relying on expensive referrals.`,
-    pain: "Empty chairs and low-quality inquiries?",
-    benefit: "High-value patients",
-    cta: "Get More Patients"
-  },
-  agents: {
-    hero: `Dominate the Market in ${locationName}.`,
-    subhead: `Stop fighting for leads on Facebook. Be the #1 authority for ${targetAudience} in ${locationName} and own your traffic.`,
-    pain: "Tired of buying shared leads?",
-    benefit: "Exclusive Commission",
-    cta: "Start Closing Deals"
-  },
-  contractors: {
-    hero: `Get High-Value Projects in ${locationName}.`,
-    subhead: `We help ${targetAudience} stop chasing "tire kickers" and start winning premium contracts in ${locationName}.`,
-    pain: "Quotations that never close?",
-    benefit: "Ready-to-buy homeowners",
-    cta: "Get Better Projects"
-  },
-  professionals: {
-    hero: `Build Your Authority in ${locationName}.`,
-    subhead: `The digital presence your firm deserves. Be the top choice for high-net-worth clients in ${locationName}.`,
-    pain: "Invisible to corporate clients?",
-    benefit: "Premium Retainers",
-    cta: "Build Your Brand"
-  }
-};
-
-// Select the right copy, fallback to 'professionals' if error
-const content = copy[silo] || copy.professionals;
-
+// Create dynamic title and description
+const pageTitle = `${service.name} in ${location.name} | Stegg Digital`;
+const pageDescription = `Top-rated ${service.name} services in ${location.name}. We help businesses in ${location.name} grow with high-performance digital solutions.`;
 ---
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{serviceName} in {locationName} | Stegg Digital</title>
-    <meta name="description" content={`Top rated ${serviceName} specifically for ${targetAudience} in ${locationName}, ${state}. Dominate your local market today.`}>
-</head>
-<body class="bg-slate-50 font-sans text-slate-900">
-
-    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <a href="/" class="font-bold text-xl tracking-tight">Stegg.</a>
-        <a href="/" class="text-sm font-medium text-slate-500 hover:text-blue-600">← Back to Home</a>
-    </nav>
-
-    <header class="pt-20 pb-32 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-wide uppercase mb-6">
-                Serving {targetAudience} in {locationName}
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-                {content.hero}
-            </h1>
-            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                {content.subhead}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
-                    {content.cta}
-                </a>
-                <a href="/" class="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all">
-                    View Pricing
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="py-20 bg-white border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6">Why {targetAudience} in {locationName} choose us.</h2>
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">The Problem: {content.pain}</h3>
-                            <p class="text-slate-600 text-sm">Most agencies offer generic marketing. They don't understand the nuances of the {locationName} market.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">The Solution: {content.benefit}</h3>
-                            <p class="text-slate-600 text-sm">We use programmatic SEO to specifically target customers searching for <strong>{serviceName} in {locationName}</strong>.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-slate-900 rounded-2xl p-8 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/30 rounded-full blur-[60px]"></div>
-                <div class="relative z-10">
-                    <div class="font-mono text-xs text-blue-400 mb-2">TARGETING DATA</div>
-                    <div class="text-2xl font-bold mb-8">Dominating {locationName}</div>
-                    
-                    <div class="space-y-3 font-mono text-sm">
-                        <div class="flex justify-between border-b border-white/10 pb-2">
-                            <span class="text-slate-400">Target Area</span>
-                            <span>{locationName}, {state}</span>
-                        </div>
-                         <div class="flex justify-between border-b border-white/10 pb-2">
-                            <span class="text-slate-400">Niche</span>
-                            <span>{targetAudience}</span>
-                        </div>
-                         <div class="flex justify-between border-b border-white/10 pb-2">
-                            <span class="text-slate-400">Strategy</span>
-                            <span class="text-green-400">Programmatic SEO</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="pt-20">
+    <section class="bg-slate-900 text-white py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          {service.name} in <span class="text-blue-400">{location.name}</span>
+        </h1>
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+          {service.description} specifically tailored for businesses in {location.name}.
+        </p>
+        <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-full transition-all">
+          Get a Quote for {location.name}
+        </a>
+      </div>
     </section>
 
-    <footer class="bg-slate-50 py-12 border-t border-slate-200 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h3 class="font-bold text-slate-900 mb-4">We serve all areas near {locationName}</h3>
-            <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
-                {LOCATIONS.slice(0, 10).map((loc) => (
-                    <a href={`/${serviceName.toLowerCase().replace(/ /g, '-')}-in-${loc.slug}`} class="text-xs text-slate-500 hover:text-blue-600 underline decoration-slate-300">
-                        {serviceName} in {loc.name}
-                    </a>
-                ))}
-            </div>
-            <p class="mt-8 text-xs text-slate-400">
-                &copy; {new Date().getFullYear()} Stegg Digital. Specialized {serviceName} for {state}.
-            </p>
-        </div>
-    </footer>
+    <section class="py-16 px-4">
+      <div class="max-w-3xl mx-auto prose prose-lg prose-slate">
+        <h2>Why Choose Stegg for {service.name} in {location.name}?</h2>
+        <p>
+          Running a business in <strong>{location.name}</strong> comes with unique challenges. 
+          You need a partner who understands the local market. Whether you are targeting customers 
+          nearby or expanding across the region, our <strong>{service.name}</strong> strategies are designed to deliver ROI.
+        </p>
+        
+        <ul>
+            <li><strong>Local Focus:</strong> Optimized for the {location.name} market.</li>
+            <li><strong>Speed:</strong> Our solutions are built for high performance.</li>
+            <li><strong>Results:</strong> We focus on leads and sales, not just vanity metrics.</li>
+        </ul>
 
-</body>
-</html>
+        <h3>Ready to dominate the market in {location.name}?</h3>
+        <p>
+          Don't let your competitors take your customers. Let's build a {service.name} strategy that wins.
+        </p>
+      </div>
+    </section>
+
+    <div id="contact">
+      <Contact />
+    </div>
+  </main>
+</Layout>
