@@ -1,70 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Contact from '../components/Contact.astro';
-import { SERVICES } from '../data/services';   // <--- THIS WAS MISSING
-import { LOCATIONS } from '../data/locations'; // <--- THIS WAS MISSING
+import { SERVICES } from '../data/services';
+import { LOCATIONS } from '../data/locations';
 
+// 1. GENERATE ALL PATHS
 export async function getStaticPaths() {
-  // Generate a path for every combination of Service + Location
-  // e.g. /web-design-in-subang-jaya, /seo-in-klang
-  return SERVICES.flatMap(service =>
-    LOCATIONS.map(location => ({
-      params: { 
-        service: service.slug, 
-        location: location.slug 
-      },
-      props: { service, location },
-    }))
-  );
+  const paths = [];
+  
+  SERVICES.forEach((service) => {
+    LOCATIONS.forEach((location) => {
+      paths.push({
+        params: { 
+            service: service.slug, 
+            location: location.slug 
+        },
+        props: { service, location },
+      });
+    });
+  });
+
+  return paths;
 }
 
+// 2. GET DATA
 const { service, location } = Astro.props;
 
-// Create dynamic title and description
+// 3. PAGE METADATA
 const pageTitle = `${service.name} in ${location.name} | Stegg Digital`;
-const pageDescription = `Top-rated ${service.name} services in ${location.name}. We help businesses in ${location.name} grow with high-performance digital solutions.`;
+const pageDescription = `Looking for ${service.name} in ${location.name}? We build high-performance digital assets that help businesses in ${location.name} dominate their local market.`;
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <main class="pt-20">
-    <section class="bg-slate-900 text-white py-20 px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          {service.name} in <span class="text-blue-400">{location.name}</span>
-        </h1>
-        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-          {service.description} specifically tailored for businesses in {location.name}.
-        </p>
-        <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-full transition-all">
-          Get a Quote for {location.name}
-        </a>
-      </div>
-    </section>
-
-    <section class="py-16 px-4">
-      <div class="max-w-3xl mx-auto prose prose-lg prose-slate">
-        <h2>Why Choose Stegg for {service.name} in {location.name}?</h2>
-        <p>
-          Running a business in <strong>{location.name}</strong> comes with unique challenges. 
-          You need a partner who understands the local market. Whether you are targeting customers 
-          nearby or expanding across the region, our <strong>{service.name}</strong> strategies are designed to deliver ROI.
-        </p>
+  
+  <section class="relative pt-32 pb-20 bg-slate-50 overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 32px 32px;"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-bold mb-6">
+             <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Serving {location.name} Businesses
+        </div>
         
-        <ul>
-            <li><strong>Local Focus:</strong> Optimized for the {location.name} market.</li>
-            <li><strong>Speed:</strong> Our solutions are built for high performance.</li>
-            <li><strong>Results:</strong> We focus on leads and sales, not just vanity metrics.</li>
-        </ul>
-
-        <h3>Ready to dominate the market in {location.name}?</h3>
-        <p>
-          Don't let your competitors take your customers. Let's build a {service.name} strategy that wins.
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            The Best <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{service.name}</span> <br />
+            in {location.name}.
+        </h1>
+        
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Stop losing customers to competitors in <strong>{location.name}</strong>. 
+            {service.description}
         </p>
-      </div>
-    </section>
 
-    <div id="contact">
-      <Contact />
+        <a href="/#contact" class="inline-block px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:-translate-y-1">
+            Get a Quote for {location.name}
+        </a>
     </div>
-  </main>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Why businesses in {location.name} choose Stegg</h2>
+        <div class="prose prose-lg mx-auto text-slate-600">
+            <p>
+                Running a business in <strong>{location.name}</strong> is competitive. Whether you are targeting customers near the city center or the surrounding neighborhoods, you need a digital presence that stands out.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 mt-6">
+                <li><strong>Local Speed:</strong> Your site loads instantly for users in {location.name}.</li>
+                <li><strong>Local SEO:</strong> We optimize for keywords like "{service.name} near {location.name}".</li>
+            </ul>
+        </div>
+    </div>
+  </section>
+
 </Layout>
