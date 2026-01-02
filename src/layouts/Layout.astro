@@ -1,57 +1,56 @@
 ---
-// src/layouts/Layout.astro
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css'; // <--- RESTORED: This fixes the navbar and colors
 
-// 1. Import the fonts
-import '@fontsource/inter';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
-import '@fontsource/plus-jakarta-sans';
-import '@fontsource/plus-jakarta-sans/600.css';
-import '@fontsource/plus-jakarta-sans/700.css';
-import '@fontsource/plus-jakarta-sans/800.css';
+const { 
+    title, 
+    description = "Stop renting your traffic from Google Ads. Build a digital asset that dominates local search results.",
+    image = "/og-image.png"
+} = Astro.props;
 
-// 2. Import global styles
-import '../styles/global.css';
-
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+// Get the full URL for the canonical tag
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<script src="https://unpkg.com/lucide@latest"></script>
-	</head>
-	
-	<body class="antialiased bg-mesh min-h-screen text-slate-900">
-		<slot />
 
-		<script is:inline>
-			function initIcons() {
-				// Check if the library is loaded
-				if (window.lucide) {
-					window.lucide.createIcons();
-				} else {
-					// If not ready, wait 100ms and try again
-					setTimeout(initIcons, 100);
-				}
-			}
-			
-			// Start checking when the DOM is ready
-			document.addEventListener('DOMContentLoaded', initIcons);
-            
-            // Also try immediately in case it's already cached
-            initIcons();
-		</script>
+        <link rel="canonical" href={canonicalURL} />
+
+        <title>{title}</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={socialImageURL} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={Astro.url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={socialImageURL} />
+
+        <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-3ZQDVY2275"></script>
+        <script type="text/partytown">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3ZQDVY2275');
+        </script>
+        <script is:inline src="https://unpkg.com/lucide@latest"></script>
+	</head>
+	<body class="bg-white font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-blue-900">
+		<slot />
+        
+        <script is:inline>
+            lucide.createIcons();
+        </script>
 	</body>
 </html>
