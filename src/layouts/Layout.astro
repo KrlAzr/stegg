@@ -5,60 +5,77 @@ import '../styles/global.css'; // Vital for Tailwind styles
 const { 
     title, 
     description = "Stop renting your traffic from Google Ads. Build a digital asset that dominates local search results.",
-    image = "/og-image.png"
+    image = "/og-image.jpg" // Changed to .jpg to match the file we created
 } = Astro.props;
 
-// Get the full URL for the canonical tag
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(image, Astro.site);
+// Robust URL generation (Fallbacks to origin if site is not set in config)
+const siteURL = Astro.site ? Astro.site : Astro.url.origin;
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL(image, siteURL);
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="mask-icon" href="/favicon.svg" color="#2563eb" />
 
         <link rel="canonical" href={canonicalURL} />
 
-        <title>{title}</title>
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={Astro.url} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={socialImageURL} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={Astro.url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content={socialImageURL} />
+        <title>{title}</title>
+		<meta name="description" content={description} />
+		
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={socialImageURL} />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={socialImageURL} />
 
         <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-3ZQDVY2275"></script>
-        <script type="text/partytown">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3ZQDVY2275');
-        </script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-3ZQDVY2275');
+		</script>
 
         <script type="text/partytown">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "uuz5idzlke");
-        </script>
+			(function(c,l,a,r,i,t,y){
+				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+			})(window, document, "clarity", "script", "uuz5idzlke");
+		</script>
+        
         <script is:inline src="https://unpkg.com/lucide@latest"></script>
+        
+        <ViewTransitions />
 	</head>
 	<body class="bg-white font-sans text-slate-900 antialiased selection:bg-blue-200 selection:text-blue-900">
 		<slot />
-        
+		
         <script is:inline>
-            lucide.createIcons();
-        </script>
+            // Initial load
+			lucide.createIcons();
+
+            // Handle View Transitions (if user navigates without reload)
+            document.addEventListener('astro:page-load', () => {
+                lucide.createIcons();
+            });
+		</script>
 	</body>
 </html>
