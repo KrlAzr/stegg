@@ -1,0 +1,60 @@
+---
+// src/pages/leads/[service]-in-[location].astro
+import Layout from '../../layouts/Layout.astro';
+import { niches, locations } from '../../data/campaigns';
+
+// 1. Generate All 90+ Paths (3 Niches * 3 Items * 10 Locations)
+export async function getStaticPaths() {
+  const paths = [];
+  
+  niches.forEach(niche => {
+    niche.high_value_items.forEach(item => {
+      locations.forEach(location => {
+        paths.push({
+          params: { service: item.slug, location: location.slug },
+          props: { service: item, niche, location }
+        });
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { service, niche, location } = Astro.props;
+---
+
+<Layout title={`Get more ${service.name} customers in ${location.name} | Stegg.`}>
+  <main class="py-20 max-w-4xl mx-auto px-4">
+    
+    <div class="text-center mb-16">
+        <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">
+            High Intent Lead Gen
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mt-6 mb-6">
+          Get more <span class="text-blue-600">{service.name}</span> customers <br>
+          in {location.name}.
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+            There are people in <strong>{location.name}</strong> searching for "{service.name}" right now. 
+            Currently, they are clicking on your competitors. Let's fix that.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl text-center">
+            <div class="text-3xl font-bold text-slate-900 mb-1">High</div>
+            <div class="text-xs text-slate-500 uppercase font-bold">Demand in {location.name}</div>
+        </div>
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl text-center">
+            <div class="text-3xl font-bold text-slate-900 mb-1">0</div>
+            <div class="text-xs text-slate-500 uppercase font-bold">Leads you currently get</div>
+        </div>
+        <div class="p-6 bg-blue-600 border border-blue-600 rounded-xl text-center shadow-lg shadow-blue-500/30">
+            <div class="text-3xl font-bold text-white mb-1">Stegg.</div>
+            <div class="text-xs text-blue-100 uppercase font-bold">The Solution</div>
+        </div>
+    </div>
+
+  </main>
+</Layout>

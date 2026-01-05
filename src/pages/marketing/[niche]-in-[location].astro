@@ -1,0 +1,44 @@
+---
+// src/pages/marketing/[niche]-in-[location].astro
+import Layout from '../../layouts/Layout.astro';
+import { niches, locations } from '../../data/campaigns';
+
+// 1. Generate All 30+ Paths (3 Niches * 10 Locations)
+export async function getStaticPaths() {
+  return niches.flatMap(niche => 
+    locations.map(location => ({
+      params: { niche: niche.slug, location: location.slug },
+      props: { niche, location },
+    }))
+  );
+}
+
+const { niche, location } = Astro.props;
+---
+
+<Layout title={`Marketing for ${niche.plural} in ${location.name} | Stegg.`}>
+  <main class="py-20 max-w-4xl mx-auto px-4">
+    
+    <h1 class="text-5xl font-bold text-slate-900 mb-6">
+      Stop fighting for scraps on {niche.competitor_platform}.
+    </h1>
+    
+    <p class="text-xl text-slate-600 mb-8">
+      You are a top-tier <strong>{niche.name}</strong> in <strong>{location.name}</strong>. 
+      Why are you relying on generic platforms that pit you against cheap competitors?
+    </p>
+
+    <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 mb-12">
+      <h2 class="text-2xl font-bold text-blue-900 mb-4">The Stegg Strategy for {location.name}</h2>
+      <p class="text-blue-800">
+        We build a dedicated digital asset that targets high-net-worth patients in <strong>{location.name}</strong> 
+        who are specifically looking for <strong>{niche.high_value_items[0].name}</strong> and <strong>{niche.high_value_items[1].name}</strong>.
+      </p>
+    </div>
+
+    <a href="/contact" class="inline-block bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition">
+      Get {niche.plural} Leads in {location.name}
+    </a>
+
+  </main>
+</Layout>
