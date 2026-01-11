@@ -1,12 +1,18 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import GrowthEngine from '../components/GrowthEngine.astro';
-import UnfairAdvantage from '../components/UnfairAdvantage.astro';
-import StrategicDeepDive from '../components/StrategicDeepDive.astro';
-import SidecarMode from '../components/SidecarMode.astro';
-import RealityCheck from '../components/RealityCheck.astro'; // <--- Imported Here
+
+import SignalStack from '../components/SignalStack.astro';     
+
+// --- DEEP DIVE SECTIONS (The Core Technology) ---
+import FeatureGPS from '../components/features/FeatureGPS.astro';
+import FeatureTrust from '../components/features/FeatureTrust.astro';
+import FeatureComparison from '../components/features/FeatureComparison.astro';
+
+// --- SOCIAL PROOF & OFFER ---
+import RealityCheck from '../components/RealityCheck.astro';   
 import Testimonials from '../components/Testimonials.astro';
 import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
@@ -21,24 +27,18 @@ import Footer from '../components/Footer.astro';
     <main>
         <Hero />
         
-        <GrowthEngine />
-        
-        <UnfairAdvantage />
+        <SignalStack />
 
-        <StrategicDeepDive />
-
-        <SidecarMode />
+        <FeatureGPS />
+        <FeatureTrust />
+        <FeatureComparison />
 
         <RealityCheck /> 
         
         <Testimonials />
-
         <Pricing />
-        
         <FAQ />
-        
         <AboutBuilder />
-        
         <Contact />
     </main>
 

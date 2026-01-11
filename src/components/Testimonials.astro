@@ -1,64 +1,111 @@
 ---
 // src/components/Testimonials.astro
 ---
-<section class="py-32 relative">
+<section class="py-32 bg-white relative overflow-hidden">
+    
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-20">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4 tracking-tight text-display">Loved by local businesses.</h2>
-            <p class="text-slate-500">Real results from the engine.</p>
+        
+        <div class="text-center mb-20 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                Loved by local businesses.
+            </h2>
+            <p class="text-lg text-slate-500 leading-relaxed">
+                We don't sell "SEO services." We sell <strong class="text-slate-900">market dominance</strong>. 
+                Here is what happens when you own the map.
+            </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="ui-card p-8 rounded-2xl bg-white hover:shadow-lg transition-all">
-                <div class="flex text-amber-400 mb-6 gap-0.5">
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group">
+                <div class="absolute top-8 right-8 text-slate-200 group-hover:text-blue-100 transition-colors">
+                    <i data-lucide="quote" class="w-8 h-8 fill-current"></i>
+                </div>
+
+                <div class="flex text-yellow-400 mb-6 gap-0.5">
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">"I'm based in Bangsar, but suddenly I was getting WhatsApps from clients in Damansara and TTDI. The system put my business on the map in areas I didn't even know how to target."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm">H</div>
+                
+                <p class="text-slate-700 mb-8 leading-relaxed text-sm font-medium">
+                    "I operate in Bangsar, but my phone rings for jobs in TTDI and Damansara. The <span class="text-blue-600 bg-blue-50 px-1 rounded">GPS technology</span> bridged the gap. I'm not just a local shop anymore; I serve the whole district."
+                </p>
+                
+                <div class="flex items-center gap-3 pt-6 border-t border-slate-200/60">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">H</div>
                     <div>
-                        <div class="text-slate-900 font-bold text-sm">Hafiz A.</div>
+                        <div class="text-slate-900 font-bold text-sm flex items-center gap-1">
+                            Hafiz A.
+                            <i data-lucide="badge-check" class="w-3 h-3 text-blue-500"></i>
+                        </div>
                         <div class="text-xs text-slate-500">Interior Designer</div>
                     </div>
                 </div>
             </div>
-             <div class="ui-card p-8 rounded-2xl bg-white hover:shadow-lg transition-all">
-                <div class="flex text-amber-400 mb-6 gap-0.5">
+
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group">
+                <div class="absolute top-8 right-8 text-slate-200 group-hover:text-blue-100 transition-colors">
+                    <i data-lucide="quote" class="w-8 h-8 fill-current"></i>
+                </div>
+
+                <div class="flex text-yellow-400 mb-6 gap-0.5">
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">"We rank #1 for 'Repair Shah Alam', 'Install Cyberjaya', and 20 other locations. We didn't write a single word; the system did it all automatically."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm">C</div>
+                
+                <p class="text-slate-700 mb-8 leading-relaxed text-sm font-medium">
+                    "It's unfair to my competitors. While they fight over one keyword, I have <span class="text-blue-600 bg-blue-50 px-1 rounded">50 different pages</span> catching customers from every corner of the city. I stopped running Ads entirely."
+                </p>
+                
+                <div class="flex items-center gap-3 pt-6 border-t border-slate-200/60">
+                    <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">C</div>
                     <div>
-                        <div class="text-slate-900 font-bold text-sm">Chee Meng</div>
+                        <div class="text-slate-900 font-bold text-sm flex items-center gap-1">
+                            Chee Meng
+                            <i data-lucide="badge-check" class="w-3 h-3 text-blue-500"></i>
+                        </div>
                         <div class="text-xs text-slate-500">HVAC Specialist</div>
                     </div>
                 </div>
             </div>
-             <div class="ui-card p-8 rounded-2xl bg-white hover:shadow-lg transition-all">
-                <div class="flex text-amber-400 mb-6 gap-0.5">
+
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group">
+                <div class="absolute top-8 right-8 text-slate-200 group-hover:text-blue-100 transition-colors">
+                    <i data-lucide="quote" class="w-8 h-8 fill-current"></i>
+                </div>
+
+                <div class="flex text-yellow-400 mb-6 gap-0.5">
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">"It's unfair to my competitors. While they fight over one keyword, I have 50 different pages catching customers from every corner of the country."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm">S</div>
+                
+                <p class="text-slate-700 mb-8 leading-relaxed text-sm font-medium">
+                    "My competitors have 5 reviews. I show up with <span class="text-blue-600 bg-blue-50 px-1 rounded">Gold Stars</span> right in the search results. Clients tell me they clicked because I looked like the 'safest choice' immediately."
+                </p>
+                
+                <div class="flex items-center gap-3 pt-6 border-t border-slate-200/60">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-bold text-sm">S</div>
                     <div>
-                        <div class="text-slate-900 font-bold text-sm">Sarah J.</div>
+                        <div class="text-slate-900 font-bold text-sm flex items-center gap-1">
+                            Sarah J.
+                            <i data-lucide="badge-check" class="w-3 h-3 text-blue-500"></i>
+                        </div>
                         <div class="text-xs text-slate-500">Event Planner</div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

@@ -1,0 +1,84 @@
+---
+// src/components/GoogleSimulator.astro
+// No imports needed. Pure Tailwind magic.
+---
+
+<section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-slate-900">See the Difference.</h2>
+            <p class="text-slate-500 mt-4">This is what your customers see when they search.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
+            
+            <div class="opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="text-center mb-4 text-xs font-bold uppercase tracking-widest text-slate-400">The "Brochure" Site</div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 font-sans">
+                    <div class="h-8 w-full bg-slate-100 rounded-full mb-6 flex items-center px-4">
+                        <div class="w-24 h-2 bg-slate-300 rounded-full"></div>
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <div class="w-6 h-6 rounded-full bg-slate-200"></div>
+                            <div class="text-xs text-slate-500">Competitor Clinic</div>
+                        </div>
+                        <div class="text-blue-800 text-lg hover:underline truncate">Dental Services in Bangsar - General Dentistry</div>
+                        <div class="text-sm text-slate-600 line-clamp-2">
+                            We offer scaling, polishing, and extraction. Visit our website to learn more about our services...
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-red-500 font-bold mt-4">❌ Invisible. No Stars. No Authority.</p>
+            </div>
+
+            <div class="relative transform md:scale-110 z-10">
+                <div class="text-center mb-4 text-xs font-bold uppercase tracking-widest text-blue-600">The Stegg Engine</div>
+                <div class="bg-white p-6 rounded-xl shadow-2xl border-2 border-blue-100 font-sans relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-blue-100 rounded-full blur-3xl opacity-50 -mr-10 -mt-10"></div>
+
+                    <div class="h-8 w-full bg-slate-100 rounded-full mb-6 flex items-center px-4 justify-between">
+                        <div class="w-32 h-2 bg-slate-400 rounded-full"></div>
+                        <i data-lucide="search" class="w-3 h-3 text-slate-400"></i>
+                    </div>
+
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <div class="w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center text-[10px] text-white font-bold">S</div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-700 font-bold">Stegg Client</span>
+                                <span class="text-[10px] text-slate-400">https://stegg.client/bangsar</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-blue-600 text-lg font-medium hover:underline leading-snug">
+                            Top 3 Dental Clinics in Bangsar (2026 Review)
+                        </div>
+                        
+                        <div class="flex items-center gap-2 text-sm mt-1">
+                            <span class="text-yellow-500 font-bold tracking-tighter">★★★★★</span>
+                            <span class="text-slate-600 font-bold">4.9</span>
+                            <span class="text-slate-500">(128 Reviews)</span>
+                        </div>
+
+                        <div class="text-sm text-slate-600 mt-2">
+                            <strong>#1 Editor's Choice:</strong> Looking for a pain-free dentist in Bangsar? We reviewed the top local clinics...
+                        </div>
+                        
+                        <div class="mt-3 flex gap-2">
+                            <span class="px-2 py-0.5 bg-slate-100 border border-slate-200 rounded text-[10px] text-slate-600 font-bold">Scaling RM80</span>
+                            <span class="px-2 py-0.5 bg-slate-100 border border-slate-200 rounded text-[10px] text-slate-600 font-bold">Open Today</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-green-600 font-bold mt-4">
+                    ✅ Dominant. 5-Stars. High Click Rate.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
