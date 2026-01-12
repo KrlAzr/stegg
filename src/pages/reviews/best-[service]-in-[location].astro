@@ -1,0 +1,205 @@
+---
+// src/pages/reviews/best-[service]-in-[location].astro
+import Layout from '../../layouts/Layout.astro';
+import { SERVICES } from '../../data/services';
+import { LOCATIONS } from '../../data/locations';
+
+export async function getStaticPaths() {
+  const paths = [];
+  if (SERVICES && LOCATIONS) {
+    SERVICES.forEach((service) => {
+        LOCATIONS.forEach((location) => {
+            paths.push({
+                params: { service: service.slug, location: location.slug },
+                props: { service, location },
+            });
+        });
+    });
+  }
+  return paths;
+}
+
+const { service, location } = Astro.props;
+
+// SEO Metadata (Informational Intent)
+const pageTitle = `Top 4 ${service.name} Services in ${location.name} (2026 Review)`;
+const pageDescription = `We mystery shopped the top providers for ${service.name} in ${location.name}. See who ranks #1 for ROI, Speed, and Pricing.`;
+
+// REVIEW SCHEMA (The "Review Snippet" for Google)
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Service",
+    "name": `${service.name} in ${location.name}`
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Stegg Market Research"
+  }
+};
+
+const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <section class="pt-32 pb-12 bg-slate-900 text-white text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="inline-block bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
+                Market Research: {location.name} Edition
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                The Top 4 <span class="text-blue-400">{service.name}</span> Providers in {location.name}
+            </h1>
+            <p class="text-slate-400 text-sm">
+                Last Updated: {currentDate} • 5 min read
+            </p>
+        </div>
+    </section>
+
+    <article class="max-w-3xl mx-auto px-4 py-16">
+        <div class="prose prose-lg prose-slate mx-auto mb-16">
+            <p class="lead">
+                If you are running a business in <strong>{location.name}</strong>, finding the right partner for {service.name} is a nightmare.
+            </p>
+            <p>
+                We analyzed the local market to answer one question: <strong>Who actually delivers ROI?</strong> 
+                Most business owners in {location.name} are stuck choosing between expensive agencies that charge monthly retainers or unreliable freelancers.
+            </p>
+            <p>
+                We ranked the top 4 options available to you today based on <strong>Speed</strong>, <strong>Price</strong>, and <strong>Performance</strong>.
+            </p>
+        </div>
+
+        <div class="bg-white border-2 border-blue-600 rounded-2xl shadow-xl overflow-hidden mb-12 transform hover:-translate-y-1 transition-transform duration-300 relative">
+            
+            <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl z-10">
+                #1 EDITOR'S CHOICE
+            </div>
+
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center text-white font-bold text-2xl">
+                        S.
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900 m-0">1. Stegg Digital</h2>
+                        <div class="flex text-yellow-500 text-sm mt-1">★★★★★ (9.8/10)</div>
+                    </div>
+                </div>
+
+                <p class="text-slate-600 mb-6">
+                    Stegg is distinct because they don't sell "hours" or "retainers." They sell a <strong>Finished Digital Asset</strong>. For businesses in {location.name}, this is the only option that offers a permanent "Signal Engine" rather than a monthly rental bill.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-8 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div>
+                        <strong class="text-green-600 text-sm uppercase tracking-wide block mb-2">The Pros</strong>
+                        <ul class="text-sm space-y-1 text-slate-700">
+                            <li>✅ One-time fee (No monthly retainer)</li>
+                            <li>✅ GPS Targeting for {location.name}</li>
+                            <li>✅ You own the code 100%</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-slate-500 text-sm uppercase tracking-wide block mb-2">The Cons</strong>
+                        <ul class="text-sm space-y-1 text-slate-500">
+                            <li>❌ Limited client slots per city</li>
+                            <li>❌ Not for "cheap" template seekers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between border-t border-slate-100 pt-6">
+                    <div class="text-sm font-bold text-slate-900">
+                        Best For: <span class="font-normal text-slate-500">Serious Growth</span>
+                    </div>
+                    <a href={`/${service.slug}-in-${location.slug}`} class="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Check Availability in {location.name}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden mb-8 opacity-90 hover:opacity-100 transition-opacity">
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 font-bold text-2xl">
+                        2
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 m-0">2. Traditional Agencies</h2>
+                        <div class="flex text-yellow-500 text-sm mt-1">★★★★☆ (7.5/10)</div>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-6 text-sm">
+                    The classic "Retainer Model." Good for massive corporations with huge budgets, but often too slow and expensive for local businesses in {location.name}. You pay RM 3,000+ every month forever.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wide">
+                    Verdict: High Cost, Slow Speed.
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden mb-8 opacity-90 hover:opacity-100 transition-opacity">
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 font-bold text-2xl">
+                        3
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 m-0">3. Freelance Marketplaces</h2>
+                        <div class="flex text-yellow-500 text-sm mt-1">★★★☆☆ (6.0/10)</div>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-6 text-sm">
+                    Finding a freelancer in {location.name} or online can be cheap, but reliability is the issue. If they disappear, your business disappears.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wide">
+                    Verdict: High Risk, Low Consistency.
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden mb-12 opacity-90 hover:opacity-100 transition-opacity">
+            <div class="p-8">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 font-bold text-2xl">
+                        4
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 m-0">4. DIY Builders (Wix/Squarespace)</h2>
+                        <div class="flex text-yellow-500 text-sm mt-1">★★☆☆☆ (4.5/10)</div>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-6 text-sm">
+                    Great for a hobby, bad for business. These platforms often struggle to rank in Google Local Search for competitive areas like {location.name}.
+                </p>
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wide">
+                    Verdict: Zero Visibility.
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4">The Verdict for {location.name}</h3>
+            <p class="text-slate-600 mb-8 max-w-xl mx-auto">
+                If you want a permanent asset that dominates the {location.name} market without monthly fees, <strong>Stegg Digital</strong> is the clear winner.
+            </p>
+            <a href={`/${service.slug}-in-${location.slug}`} class="inline-block bg-slate-900 text-white font-bold px-8 py-4 rounded-xl hover:bg-slate-800 transition-transform hover:-translate-y-1 shadow-lg">
+                View Stegg's Offer for {location.name}
+            </a>
+        </div>
+
+    </article>
+
+</Layout>

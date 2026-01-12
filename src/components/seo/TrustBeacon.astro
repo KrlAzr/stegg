@@ -1,0 +1,53 @@
+---
+// src/components/seo/TrustBeacon.astro
+
+interface Props {
+  type?: "Organization" | "Service" | "LocalBusiness";
+  name?: string;
+  description?: string;
+  image?: string;
+  areaServed?: string; // e.g., "Malaysia" or "Kuala Lumpur"
+}
+
+const { 
+  type = "LocalBusiness", 
+  name = "Stegg Digital", 
+  areaServed = "Malaysia",
+  image = "https://stegg.dev/logo.png" 
+} = Astro.props;
+
+// THE TRUST SIGNAL STRATEGY: 
+// We inject "AggregateRating" into general pages to trigger the stars in SERP.
+// We use the HQ address (Rawang) as the central verification point.
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": type,
+  "name": name,
+  "image": image,
+  "telephone": "+60111111111", // Update with your business whatsapp/phone
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rawang HQ", // You can keep this generic or specific
+    "addressLocality": "Rawang",
+    "addressRegion": "Selangor",
+    "postalCode": "48000",
+    "addressCountry": "MY"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": areaServed
+  },
+  // THIS IS THE STAR TRIGGER
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

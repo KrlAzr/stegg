@@ -1,11 +1,21 @@
 ---
+// src/layouts/Layout.astro
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css'; // Vital for Tailwind styles
+import TrustBeacon from '../components/seo/TrustBeacon.astro'; // IMPORTED
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+    useCustomSchema?: boolean; // NEW PROP to disable default beacon
+}
 
 const { 
     title, 
     description = "Stop renting your traffic from Google Ads. Build a digital asset that dominates local search results.",
-    image = "/og-image.jpg" // Changed to .jpg to match the file we created
+    image = "/og-image.jpg",
+    useCustomSchema = false // Default to FALSE (Beacon is ON)
 } = Astro.props;
 
 // Robust URL generation (Fallbacks to origin if site is not set in config)
@@ -25,6 +35,8 @@ const socialImageURL = new URL(image, siteURL);
         <link rel="mask-icon" href="/favicon.svg" color="#2563eb" />
 
         <link rel="canonical" href={canonicalURL} />
+
+        { !useCustomSchema && <TrustBeacon /> }
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

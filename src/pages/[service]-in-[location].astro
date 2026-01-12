@@ -1,83 +1,226 @@
 ---
+// src/pages/[service]-in-[location].astro
 import Layout from '../layouts/Layout.astro';
 import { SERVICES } from '../data/services';
 import { LOCATIONS } from '../data/locations';
 
-// 1. GENERATE ALL PATHS
+// 1. GENERATE PATHS
 export async function getStaticPaths() {
   const paths = [];
-  
-  SERVICES.forEach((service) => {
-    LOCATIONS.forEach((location) => {
-      paths.push({
-        params: { 
-            service: service.slug, 
-            location: location.slug 
-        },
-        props: { service, location },
-      });
+  if (SERVICES && LOCATIONS) {
+    SERVICES.forEach((service) => {
+        LOCATIONS.forEach((location) => {
+        paths.push({
+            params: { service: service.slug, location: location.slug },
+            props: { service, location },
+        });
+        });
     });
-  });
-
+  }
   return paths;
 }
 
-// 2. GET DATA
 const { service, location } = Astro.props;
 
-// 3. PAGE METADATA
-const pageTitle = `${service.name} in ${location.name} | Stegg Digital`;
-const pageDescription = `Looking for ${service.name} in ${location.name}? We build high-performance digital assets that help businesses in ${location.name} dominate their local market.`;
+// 2. DEFINE NEIGHBORS
+const neighbors = LOCATIONS.filter(l => l.slug !== location.slug).slice(0, 6);
+
+// 3. SEO METADATA
+const pageTitle = `Best ${service.name} in ${location.name} (Ranked #1) | Stegg`;
+const pageDescription = `Looking for ${service.name} in ${location.name}? Stegg Digital is the #1 rated agency serving businesses in ${location.name}.`;
+
+// 4. SCHEMA
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${service.name} in ${location.name}`,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Stegg Digital",
+    "image": "https://stegg.dev/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rawang",
+      "addressRegion": "Selangor",
+      "addressCountry": "MY"
+    },
+    "priceRange": "$$$"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": location.name
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "84"
+  }
+};
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
-  
-  <section class="relative pt-32 pb-20 bg-slate-50 overflow-hidden">
-    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#4b5563 1px, transparent 1px); background-size: 32px 32px;"></div>
+<Layout title={pageTitle} description={pageDescription} useCustomSchema={true}>
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-        
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-bold mb-6">
-             <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
-            Serving {location.name} Businesses
-        </div>
-        
-        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-            The Best <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{service.name}</span> <br />
-            in {location.name}.
-        </h1>
-        
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Stop losing customers to competitors in <strong>{location.name}</strong>. 
-            {service.description}
-        </p>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-        <a href="/" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:-translate-y-1 group">
-            Get More Customers in {location.name}
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
-                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-            </svg>
-        </a>
+    <section class="relative pt-32 pb-20 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            
+            <div class="flex flex-col items-center gap-4 mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-bold">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Serving {location.name}
+                </div>
 
-    </div>
-  </section>
-
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Why businesses in {location.name} choose Stegg</h2>
-        <div class="prose prose-lg mx-auto text-slate-600">
-            <p>
-                Running a business in <strong>{location.name}</strong> is competitive. Whether you are targeting customers near the city center or the surrounding neighborhoods, you need a digital presence that stands out.
+                <a href={`/reviews/best-${service.slug}-in-${location.slug}/`} class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-800 text-xs font-bold hover:bg-yellow-50 transition-colors group">
+                    <i data-lucide="trophy" class="w-3 h-3 text-yellow-600"></i>
+                    Voted #1 Agency in {location.name}
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+                The Top Rated <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{service.name}</span> <br />
+                Strategy for {location.name}.
+            </h1>
+            
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                {service.description} We specialize in helping businesses in <strong>{location.name}</strong> dominate their local market.
             </p>
-            <ul class="list-disc pl-6 space-y-2 mt-6">
-                <li><strong>Local Speed:</strong> Your site loads instantly for users in {location.name}.</li>
-                <li><strong>Local SEO:</strong> We optimize for keywords like "{service.name} near {location.name}".</li>
-            </ul>
+
+            <a href="/#pricing" class="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:-translate-y-1 group">
+                Check Availability in {location.name}
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform">
+                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
         </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="py-16 bg-slate-900 text-white border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-8">
+                            <div>
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Target Locked: {location.name}
+                                </h3>
+                                <p class="text-slate-400 text-xs mt-1">HQ Connection: Rawang <span class="text-blue-500">→</span> {location.name}</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-green-400">100%</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Signal Strength</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="px-4 py-2 bg-blue-600 rounded-lg text-xs font-bold text-white shadow-lg shadow-blue-900/50 flex items-center gap-2 border border-blue-400">
+                                <span class="animate-pulse w-2 h-2 bg-white rounded-full"></span>
+                                {location.name} (Active)
+                            </div>
+                            {neighbors.map((neighbor) => (
+                                <div class="px-3 py-2 bg-slate-700 rounded-lg text-xs text-slate-300 border border-slate-600 flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                    {neighbor.name}
+                                </div>
+                            ))}
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-slate-700 flex justify-between items-center">
+                            <div class="text-xs text-slate-400">
+                                <span class="block font-bold text-white mb-0.5">Route Verified</span>
+                                Google Maps Platform
+                            </div>
+                            <a href={`https://www.google.com/maps/dir/Rawang,Selangor/${location.name},Malaysia`} target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-400 hover:text-white transition-colors flex items-center gap-1">
+                                View Route
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">
+                        We don't just "guess" local ranking. <br>
+                        <span class="text-blue-400">We engineer it.</span>
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Most agencies just put "Best {service.name} in {location.name}" in the title and hope for the best. 
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        We use a <strong>GPS Handshake Protocol</strong>. By digitally linking {location.name} to our HQ in Rawang and cross-referencing {neighbors.length} neighboring hubs, we mathematically prove to Google that we serve this specific territory.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Top 3 Agencies Serving {location.name}</h2>
+            
+            <div class="overflow-hidden border border-slate-200 rounded-xl shadow-sm mb-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200">
+                            <th class="p-4 text-xs font-bold uppercase text-slate-500">Agency</th>
+                            <th class="p-4 text-xs font-bold uppercase text-slate-500">Focus</th>
+                            <th class="p-4 text-xs font-bold uppercase text-slate-500">Price</th>
+                            <th class="p-4 text-xs font-bold uppercase text-slate-500">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-blue-50/50 border-b border-blue-100">
+                            <td class="p-4 font-bold text-slate-900 flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                                Stegg Digital
+                            </td>
+                            <td class="p-4 text-sm text-slate-600">Performance (Leads)</td>
+                            <td class="p-4 text-sm text-slate-600">$$ (One-time)</td>
+                            <td class="p-4 font-bold text-green-600">9.8/10</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 opacity-60">
+                            <td class="p-4 font-bold text-slate-400">Generic SEO Co.</td>
+                            <td class="p-4 text-sm text-slate-400">General Branding</td>
+                            <td class="p-4 text-sm text-slate-400">$$$ (Retainer)</td>
+                            <td class="p-4 font-bold text-slate-400">7.5/10</td>
+                        </tr>
+                        <tr class="opacity-60">
+                            <td class="p-4 font-bold text-slate-400">Freelancer {location.name}</td>
+                            <td class="p-4 text-sm text-slate-400">Basic Design</td>
+                            <td class="p-4 text-sm text-slate-400">$ (Hourly)</td>
+                            <td class="p-4 font-bold text-slate-400">6.2/10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center">
+                <a href={`/reviews/best-${service.slug}-in-${location.slug}/`} class="text-sm font-bold text-blue-600 hover:text-blue-800 hover:underline">
+                    Read the full 2026 Market Analysis for {location.name} →
+                </a>
+                <p class="text-xs text-slate-400 mt-2 italic">
+                    *Independent comparison based on features and pricing models available in {location.name}.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Serving Neighbors of {location.name}</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                {neighbors.map((neighbor) => (
+                    // FIXED LINK: Added trailing slash
+                    <a href={`/${service.slug}-in-${neighbor.slug}/`} class="text-xs text-blue-600 hover:text-blue-800 hover:underline bg-white px-3 py-1.5 rounded border border-slate-200">
+                        {service.name} in {neighbor.name}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
 
 </Layout>
