@@ -1,0 +1,62 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Footer from '../../../../components/Footer.astro';
+import { STORE_DATA } from '../../../../data/store-data';
+
+export function getStaticPaths() {
+  const paths = [];
+  Object.keys(STORE_DATA).forEach(storeSlug => {
+    const store = STORE_DATA[storeSlug];
+    store.products.forEach(product => {
+        paths.push({
+            params: { store: storeSlug, product: product.slug },
+            props: { storeData: store, product: product }
+        });
+    });
+  });
+  return paths;
+}
+
+const { storeData, product } = Astro.props;
+const { store } = Astro.params;
+---
+
+<Layout title={`${product.name} | ${storeData.name}`}>
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a href={`/demos/shop/${store}`} class="text-xl font-serif font-bold tracking-widest text-gray-900 uppercase">
+            {storeData.name}
+          </a>
+          <a href={`/demos/shop/${store}`} class="text-sm font-medium hover:text-gray-600 flex items-center gap-1">
+            &larr; Back to Shop
+          </a>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <div class="space-y-4">
+                <div class="aspect-[3/4] bg-gray-100 overflow-hidden rounded-sm border border-gray-100">
+                    <img src={product.image} class="w-full h-full object-cover" alt={product.name} />
+                </div>
+            </div>
+
+            <div class="sticky top-24 self-start">
+                <div class="mb-8 border-b border-gray-100 pb-8">
+                    <span class="text-sm text-gray-500 tracking-wide uppercase font-bold">{product.category}</span>
+                    <h1 class="text-4xl font-serif text-gray-900 mt-3 mb-4 leading-tight">{product.name}</h1>
+                    <p class="text-2xl font-medium text-gray-900">RM {product.price}</p>
+                </div>
+                <div class="space-y-8">
+                    <div class="prose prose-sm text-gray-600 leading-relaxed">
+                        <p>{product.description}</p>
+                    </div>
+                    <button class="w-full bg-black text-white py-5 font-bold uppercase tracking-widest hover:bg-gray-800 transition shadow-xl shadow-black/5 flex justify-center items-center gap-2">
+                        <span>Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Footer />
+</Layout>

@@ -1,0 +1,92 @@
+---
+// src/pages/storefronts.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { DEMOS } from '../data/demos';
+
+const pageTitle = "E-Commerce Storefronts | Stegg Digital";
+const pageDescription = "Immersive, high-speed shopping experiences designed for modern retail brands.";
+
+// CONFIG: Include ONLY Retail/E-com niches
+const ecomNiches = [
+    'Clothing Brand', 
+    'Skincare', 
+    'Tech Gadgets', 
+    'Coffee Roasters', 
+    'Sneakers',        
+    'Furniture',
+    'Home Decor',
+    'Indoor Plants'
+];
+
+const ecomProjects = DEMOS.filter(p => ecomNiches.includes(p.niche));
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    <Navbar />
+
+    <main>
+        <section class="pt-32 pb-16 bg-white text-center border-b border-slate-100">
+            <div class="max-w-4xl mx-auto px-4">
+                <span class="text-purple-600 font-bold tracking-widest text-xs uppercase mb-4 block">Retail Portfolio</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 tracking-tight">
+                    Immersive <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Storefronts.</span>
+                </h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    Speed kills bounce rates. We build headless commerce experiences that load instantly and convert browsers into buyers.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-stone-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {ecomProjects.map((project) => (
+                        
+                        // --- FIX IS HERE ---
+                        // We use the project slug to build a unique URL for each store
+                        <a href={`/demos/shop/${project.slug}`} target="_blank" class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-stone-200 block h-full flex flex-col">
+                            
+                            <div class="aspect-[4/3] overflow-hidden bg-stone-200 relative">
+                                <img 
+                                    src={project.image} 
+                                    alt={project.title} 
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" 
+                                />
+                                <div class="absolute top-4 right-4 bg-black/80 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>
+                                    Store Demo
+                                </div>
+                            </div>
+                            
+                            <div class="p-6 flex-1 flex flex-col">
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="text-xs font-bold text-purple-600 uppercase tracking-widest">{project.niche}</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors mb-2">{project.title}</h3>
+                                <p class="text-slate-500 text-sm line-clamp-2 mb-4 flex-1">{project.subheadline}</p>
+                                
+                                <div class="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-medium text-slate-400">
+                                    <span>Stegg Shop v1.0</span>
+                                    <span class="text-purple-600 flex items-center gap-1 font-bold group-hover:underline">
+                                        Enter Shop &rarr;
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900 text-white text-center">
+            <h2 class="text-2xl font-bold mb-8">Launching a brand?</h2>
+            <a href="https://tally.so/r/aQ52Lv" class="inline-block bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-purple-50 transition-colors">
+                Build Your Store
+            </a>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

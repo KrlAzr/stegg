@@ -1,229 +1,143 @@
 ---
 // src/components/Pricing.astro
 ---
-<section class="py-24 bg-slate-50 border-t border-slate-200" id="pricing">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<section class="py-24 bg-white border-t border-slate-200" id="pricing">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3">Investment Logic</h2>
+      <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+        One Investment. <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Infinite Signals.</span>
+      </h3>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Stop paying monthly retainers. You buy the Asset once, you own the Engine forever.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start mb-16">
+      
+      <div class="bg-white rounded-3xl p-8 border border-slate-200 hover:border-blue-200 transition-all">
+        <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider mb-2">The Launchpad</h3>
+        <p class="text-slate-600 text-sm mb-6 h-10">Proof of Concept. Test the engine in a specific area.</p>
         
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4">
-                Transparent Pricing
-            </h2>
-            <h3 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-                One Investment. <br>
-                <span class="text-blue-600">Infinite Signals.</span>
-            </h3>
-            <p class="text-slate-500 text-lg leading-relaxed">
-                Stop paying monthly retainers for "hope." Buy a permanent Signal Engine that you own 100%.
-            </p>
+        <div class="flex flex-col mb-6">
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wide mb-1">Starting from</span>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-extrabold text-slate-900">RM 2,800</span>
+            <span class="text-slate-500 text-sm font-medium">/ one-time</span>
+          </div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
-            
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg relative flex flex-col h-full hover:border-blue-300 transition-colors group/card">
-                <div class="mb-6">
-                    <h3 class="text-lg font-bold text-slate-900">The Launchpad</h3>
-                    <div class="text-xs font-bold text-blue-600 bg-blue-50 inline-block px-2 py-1 rounded mt-2 mb-2">
-                        Best for: Proving the Concept
-                    </div>
-                    <p class="text-slate-500 text-xs min-h-[32px]">Perfect for testing if "Signal Stacking" works for your niche.</p>
-                </div>
+        <a href="https://tally.so/r/aQ52Lv" target="_blank" class="block w-full py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-center rounded-xl transition-colors mb-8">
+          Start Basic Build
+        </a>
 
-                <div class="mb-6 flex items-baseline gap-1">
-                    <span class="text-3xl font-bold text-slate-900">RM 2,800</span>
-                    <span class="text-slate-400 text-xs font-medium">One-time</span>
-                </div>
+        <div class="space-y-6">
+           <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-3">The Chassis (MVP)</p>
+            <ul class="space-y-3">
+               <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i data-lucide="check" class="w-5 h-5 text-blue-600 shrink-0"></i>
+                <span><strong>Single Page</strong> High-Impact Site</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i data-lucide="check" class="w-5 h-5 text-blue-600 shrink-0"></i>
+                <span><strong>90+ Page Speed Score</strong> (Mobile)</span>
+              </li>
+            </ul>
+          </div>
 
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Basic Signal Stack</div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-3">The Engine</p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i data-lucide="check" class="w-5 h-5 text-blue-600 shrink-0"></i>
+                <span>10 GPS Locations</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i data-lucide="check" class="w-5 h-5 text-blue-600 shrink-0"></i>
+                <span>Basic Trust Beacon (Home Only)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-                <ul class="space-y-4 mb-8 flex-1">
-                    <li class="flex items-start gap-2 text-xs text-slate-700">
-                        <i data-lucide="layout" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <span><strong>High-Impact Single Page Site</strong></span>
-                    </li>
-                    
-                    <li class="flex items-start gap-2 text-xs text-slate-700 relative group cursor-help z-20">
-                        <i data-lucide="map" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <span class="border-b border-dashed border-slate-300"><strong>10 Targeted Locations</strong></span>
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-800 text-white text-[11px] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
-                            <strong class="text-blue-300 block mb-1">The "Neighbor" Strategy</strong>
-                            We target your 10 most valuable neighboring areas (e.g., If you are in Bangsar, we target Damansara, Hartamas, etc).
-                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-slate-800"></div>
-                        </div>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-slate-700">
-                        <i data-lucide="star" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <span><strong>Trust Beacon</strong> (Homepage Only)</span>
-                    </li>
-                    
-                    <li class="flex items-start gap-2 text-xs text-slate-400">
-                        <i data-lucide="x" class="w-4 h-4 text-slate-300 shrink-0"></i>
-                        <span class="line-through">Comparison Winner Network</span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-slate-700">
-                        <i data-lucide="zap" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <span><strong>High-speed Hosting</strong></span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-slate-700">
-                        <i data-lucide="gauge" class="w-4 h-4 text-blue-500 shrink-0"></i>
-                        <div>
-                            <strong>90+ Page Speed Score</strong>
-                            <p class="text-slate-500 text-[10px] mt-0.5 leading-tight">Higher chances to rank in 1st page</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <a href="https://tally.so/r/aQ52Lv" target="_blank" class="w-full block text-center bg-white border-2 border-slate-200 text-slate-600 font-bold py-3 rounded-xl hover:bg-slate-50 transition-colors text-sm">
-                    Build Launchpad
-                </a>
-            </div>
-
-            <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-2xl relative flex flex-col h-full transform lg:-translate-y-4 z-10">
-                <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-                    Most Popular
-                </div>
-
-                <div class="mb-6">
-                    <h3 class="text-xl font-bold text-white">Market Dominator</h3>
-                    <div class="text-xs font-bold text-blue-200 bg-blue-900/50 border border-blue-500/30 inline-block px-2 py-1 rounded mt-2 mb-2">
-                        Best for: Total Authority
-                    </div>
-                    <p class="text-slate-400 text-xs min-h-[32px]">The "Full Stack." We flood the market with every signal available.</p>
-                </div>
-
-                <div class="mb-6 flex items-baseline gap-1">
-                    <span class="text-4xl font-bold text-white">RM 4,800</span>
-                    <span class="text-slate-400 text-xs font-medium">One-time</span>
-                </div>
-
-                <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-3">Full Signal Stack</div>
-
-                <ul class="space-y-4 mb-8 flex-1">
-                    <li class="flex items-start gap-3 text-sm text-white font-medium">
-                        <i data-lucide="layout-template" class="w-5 h-5 text-green-400 shrink-0 mt-0.5"></i>
-                        <div>
-                            <strong>3-Page Official Website</strong>
-                            <p class="text-slate-400 text-xs font-normal mt-0.5">(Home, About, Services)</p>
-                        </div>
-                    </li>
-                    
-                    <li class="flex items-start gap-3 text-sm text-slate-300 relative group cursor-help z-20">
-                        <i data-lucide="map" class="w-5 h-5 text-blue-400 shrink-0"></i>
-                        <span class="border-b border-dashed border-slate-600 hover:border-blue-400 transition-colors"><strong>50+ Targeted Locations</strong></span>
-                        
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-white text-slate-900 text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
-                            <strong class="text-blue-600 block mb-1">Total Coverage</strong>
-                            We generate pages for <strong>every</strong> viable neighborhood (Subang, PJ, KL, Cheras, Ampang). You capture traffic from the whole territory.
-                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-white"></div>
-                        </div>
-                    </li>
-
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-500 shrink-0"></i>
-                        <span><strong>Global Trust Beacon</strong> (All Pages)</span>
-                    </li>
-
-                    <li class="flex items-start gap-3 text-sm text-slate-300 relative group cursor-help z-20">
-                        <i data-lucide="trophy" class="w-5 h-5 text-green-500 shrink-0"></i>
-                        <span class="border-b border-dashed border-slate-600 hover:border-green-400 transition-colors"><strong>Comparison Winner Network</strong></span>
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-white text-slate-900 text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
-                            <strong class="text-green-600 block mb-1">Control the Narrative</strong>
-                            We build 50 "Best of [Location]" pages that review the market and position YOU as the #1 Editor's Choice.
-                            <div class="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-white"></div>
-                        </div>
-                    </li>
-
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
-                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400 shrink-0"></i>
-                        <span><strong>High-speed Hosting</strong></span>
-                    </li>
-
-                    <li class="flex items-start gap-3 text-sm text-slate-300">
-                        <i data-lucide="gauge" class="w-5 h-5 text-blue-400 shrink-0"></i>
-                        <div>
-                            <strong>90+ Page Speed Score</strong>
-                            <p class="text-slate-400 text-xs font-normal mt-0.5">Higher chances to rank in 1st page</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <a href="https://tally.so/r/aQ52Lv" target="_blank" class="w-full block text-center bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-500 transition-colors text-sm shadow-lg shadow-blue-900/50">
-                    Dominate Local Search
-                </a>
-            </div>
-
-            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 border border-cyan-200 shadow-lg relative flex flex-col h-full">
-                <div class="mb-6">
-                    <div class="flex items-center gap-2 mb-1">
-                        <h3 class="text-lg font-bold text-cyan-900">Sidecar</h3>
-                        <span class="bg-cyan-200 text-cyan-800 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider">Subdomain Engine</span>
-                    </div>
-                    <div class="text-xs font-bold text-cyan-700 bg-cyan-100/50 border border-cyan-200 inline-block px-2 py-1 rounded mt-2 mb-2">
-                        Best for: Existing Websites
-                    </div>
-                    <p class="text-cyan-700/80 text-xs min-h-[32px]">Don't replace your site. We attach this engine to a subdomain to feed you traffic.</p>
-                </div>
-
-                <div class="mb-6 flex items-baseline gap-1">
-                    <span class="text-3xl font-bold text-cyan-900">RM 2,200</span>
-                    <span class="text-cyan-600 text-xs font-medium">One-time</span>
-                </div>
-
-                <div class="text-xs font-bold text-cyan-600/70 uppercase tracking-wider mb-3">Signal Injection</div>
-
-                <ul class="space-y-3 mb-8 flex-1">
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="map" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <span><strong>50+ Targeted Locations</strong></span>
-                    </li>
-                    
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="star" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <span><strong>Global Trust Beacon</strong></span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="trophy" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <span><strong>Comparison Winner Network</strong></span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="link" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <span><strong>Funnels to Your Specific CTA</strong></span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="zap" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <span><strong>High-speed Hosting</strong> (Subdomain)</span>
-                    </li>
-
-                    <li class="flex items-start gap-2 text-xs text-cyan-800">
-                        <i data-lucide="gauge" class="w-4 h-4 text-cyan-600 shrink-0"></i>
-                        <div>
-                            <strong>90+ Page Speed Score</strong>
-                            <p class="text-cyan-700/70 text-[10px] mt-0.5 leading-tight">Higher chances to rank in 1st page</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <a href="https://tally.so/r/aQ52Lv" target="_blank" class="w-full block text-center bg-white border-2 border-cyan-200 text-cyan-700 font-bold py-3 rounded-xl hover:bg-cyan-50 hover:border-cyan-300 transition-colors text-sm">
-                    Connect to My Website
-                </a>
-            </div>
-
+      <div class="bg-slate-900 rounded-3xl p-8 border border-slate-700 relative overflow-hidden text-white shadow-2xl transform md:-translate-y-4">
+        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">MOST POPULAR</div>
+        
+        <h3 class="text-lg font-bold text-blue-400 uppercase tracking-wider mb-2">Market Dominator</h3>
+        <p class="text-slate-400 text-sm mb-6 h-10">The Full Asset. Total saturation of your service area.</p>
+        
+        <div class="flex flex-col mb-6">
+          <span class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Starting from</span>
+          <div class="flex items-baseline gap-1">
+            <span class="text-4xl font-extrabold text-white">RM 4,800</span>
+            <span class="text-slate-400 text-sm font-medium">/ one-time</span>
+          </div>
         </div>
 
-        <div class="mt-12 text-center max-w-3xl mx-auto bg-blue-50 rounded-2xl p-6 border border-blue-100">
-            <h4 class="text-sm font-bold text-blue-900 mb-2 flex items-center justify-center gap-2">
-                <i data-lucide="info" class="w-4 h-4"></i> You Own The Asset
-            </h4>
-            <p class="text-xs text-blue-800/80 leading-relaxed">
-                To ensure you maintain 100% ownership of your brand, <strong>the custom domain name (e.g., yourbusiness.com) is provided by you</strong>. 
-                This ensures that even if you stop working with us, you keep your rankings.
-            </p>
+        <a href="https://tally.so/r/aQ52Lv" target="_blank" class="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-center rounded-xl transition-all shadow-lg shadow-blue-900/50 mb-8 hover:scale-105">
+          Deploy Full System
+        </a>
+
+        <div class="space-y-6">
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3">The Chassis (MVP)</p>
+            <ul class="space-y-3">
+               <li class="flex items-start gap-3 text-sm text-white">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0"></i>
+                <span><strong>3-Page Premium Site</strong> (Home, About, Services)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 shrink-0"></i>
+                <span><strong>90+ Page Speed Score</strong> (Mobile)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs font-bold text-blue-400 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3">The Engine (Unfair Advantage)</p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-white">
+                <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 text-blue-400">
+                   <i data-lucide="map" class="w-3 h-3"></i>
+                </div>
+                <span><strong>50+ GPS Locations</strong> (Handshake Protocol)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white">
+                <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 text-blue-400">
+                   <i data-lucide="star" class="w-3 h-3"></i>
+                </div>
+                <span><strong>Global Trust Beacon</strong> (All Pages)</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-white">
+                <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 text-blue-400">
+                   <i data-lucide="trophy" class="w-3 h-3"></i>
+                </div>
+                <span><strong>Comparison Winner</strong> Logic</span>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
 
     </div>
+
+    <div class="max-w-3xl mx-auto bg-blue-50 rounded-2xl p-6 border border-blue-100 flex items-start gap-4">
+        <div class="bg-blue-100 p-2 rounded-lg shrink-0">
+            <i data-lucide="shield-check" class="w-6 h-6 text-blue-600"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Asset Ownership Guarantee</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                The custom domain name (e.g., <em>yourbusiness.com</em>) is a separate annual cost borne by the business owner. 
+                We structure it this way so you retain <strong>100% legal ownership</strong> of your digital asset. We can assist with the purchase and setup if required.
+            </p>
+        </div>
+    </div>
+
+  </div>
 </section>

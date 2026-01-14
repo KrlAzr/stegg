@@ -3,42 +3,48 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-
-import SignalStack from '../components/SignalStack.astro';     
-
-// --- DEEP DIVE SECTIONS (The Core Technology) ---
-import FeatureGPS from '../components/features/FeatureGPS.astro';
-import FeatureTrust from '../components/features/FeatureTrust.astro';
-import FeatureComparison from '../components/features/FeatureComparison.astro';
-
-// --- SOCIAL PROOF & OFFER ---
-import RealityCheck from '../components/RealityCheck.astro';   
+import VisualProof from '../components/VisualProof.astro';
+import SignalStack from '../components/SignalStack.astro';
+import RealityCheck from '../components/RealityCheck.astro';    
 import Testimonials from '../components/Testimonials.astro';
 import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import AboutBuilder from '../components/AboutBuilder.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+const pageTitle = "Stegg | Premium Digital Asset Architecture";
+const pageDescription = "We build high-performance digital assets that dominate local search. Premium design meets programmatic SEO.";
 ---
 
-<Layout title="Stegg | The Local Growth Engine">
+<Layout title={pageTitle} description={pageDescription}>
     <Navbar />
     
     <main>
         <Hero />
         
-        <SignalStack />
+        <div id="how-it-works" class="scroll-mt-24">
+            <VisualProof />
+        </div>
 
-        <FeatureGPS />
-        <FeatureTrust />
-        <FeatureComparison />
+        <div id="engine">
+            <SignalStack />
+        </div>
 
         <RealityCheck /> 
         
         <Testimonials />
-        <Pricing />
-        <FAQ />
+        
+        <div id="pricing" class="scroll-mt-24">
+            <Pricing />
+        </div>
+
+        <div id="faq" class="scroll-mt-24">
+            <FAQ />
+        </div>
+
         <AboutBuilder />
+        
         <Contact />
     </main>
 

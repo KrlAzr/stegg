@@ -1,0 +1,26 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+import AboutBuilder from '../components/AboutBuilder.astro'; // Reusing your existing component
+
+const pageTitle = "The Architect | Stegg Digital";
+const pageDescription = "Meet the engineer behind the Stegg Signal System.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    
+    <div class="pt-20">
+        <AboutBuilder />
+    </div>
+
+    <section class="py-20 bg-white text-center border-t border-slate-100">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Why "Stegg"?</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Most agencies are "Artists" (they make things look pretty) or "Mechanics" (they fix code). 
+                We are <strong>Architects</strong>. We design the entire system—Visuals, Code, and Signal—to work as one cohesive asset.
+            </p>
+        </div>
+    </section>
+
+</Layout>

@@ -1,0 +1,48 @@
+---
+// src/pages/engine.astro
+import Layout from '../layouts/Layout.astro';
+import SignalStack from '../components/SignalStack.astro';
+import FeatureGPS from '../components/features/FeatureGPS.astro';
+import FeatureTrust from '../components/features/FeatureTrust.astro';
+import FeatureComparison from '../components/features/FeatureComparison.astro';
+
+const pageTitle = "The Signal Engine | Stegg Digital";
+const pageDescription = "Explore the proprietary technology stack that powers our digital assets. GPS Handshakes, Trust Beacons, and Programmatic SEO.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+    
+    <section class="pt-32 pb-16 bg-slate-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                The <span class="text-blue-400">Unfair Advantage.</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                While your competitors rely on luck, we rely on engineering. 
+                Here is the proprietary "Signal Stack" we install in every asset.
+            </p>
+        </div>
+    </section>
+
+    <SignalStack />
+
+    <div class="bg-slate-50 border-t border-slate-200">
+        <FeatureGPS />
+        <FeatureTrust />
+        <FeatureComparison />
+    </div>
+
+    <section class="py-24 bg-white border-t border-slate-200 text-center">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">Ready to install this engine?</h2>
+            <p class="text-slate-600 mb-10">
+                This technology is standard in every asset we build. No plugins, no monthly fees. Just pure ownership.
+            </p>
+            <a href="https://tally.so/r/aQ52Lv" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-500 transition-all shadow-lg hover:-translate-y-1">
+                Start My Build
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </section>
+
+</Layout>
