@@ -1,15 +1,17 @@
+// src/data/demos.ts
+
 export const DEMOS = [
     // --- SERVICE / LEAD GEN ---
 
     // 1. Skin Clinic
     {
-        slug: 'muse-medical',
+        slug: 'dr-sophia-aesthetic',
         niche: 'Skin Clinic',
-        title: 'The Muse Clinic',
+        title: 'Dr. Sophia Aesthetic Clinic',
         headline: 'Where Medical Science Meets Artistry.',
         subheadline: 'A boutique medical aesthetic centre in Bangsar South. FDA-approved technologies for subtle, sophisticated enhancement.',
         color: 'rose',
-        image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=2000', 
+        image: 'https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
         stats: [
             { label: 'procedures performed', value: '12k+' },
             { label: 'doctors on board', value: '4' },
@@ -17,7 +19,7 @@ export const DEMOS = [
         ],
         problem: {
             title: 'Stop gambling with your face.',
-            text: 'Discount treatments often use diluted products or uncertified lasers. At Muse, we prioritize safety and long-term skin health over quick fixes.'
+            text: 'Discount treatments often use diluted products or uncertified lasers. We prioritize safety and long-term skin health over quick fixes.'
         },
         process: [
             { step: '01', title: '3D Mapping', text: 'We scan your facial structure to plan precise enhancements.' },
@@ -25,21 +27,24 @@ export const DEMOS = [
             { step: '03', title: 'Refinement', text: 'A follow-up scan 2 weeks later to ensure perfection.' }
         ],
         reviews: [
-            { name: 'Datin Sofia', text: 'Dr. Lim has an artist\'s eye. I look 5 years younger but nobody can tell I had work done.', stars: 5 },
+            { name: 'Datin Sofia', text: 'Dr. Sophia has an artist\'s eye. I look 5 years younger but nobody can tell I had work done.', stars: 5 },
             { name: 'Elena R.', text: 'The PicoSure laser treatment completely cleared my melasma.', stars: 5 },
             { name: 'Chloe T.', text: 'Impeccable service. The private waiting rooms are a nice touch.', stars: 5 }
         ],
         faq: [
-            { q: 'Are your doctors LCP certified?', a: 'Absolutely. Every doctor holds a valid LCP from the Ministry of Health.' },
-            { q: 'Do you offer installment plans?', a: 'Yes, we offer 0% interest installments for Maybank and CIMB cardholders.' }
+            { q: 'Are your doctors LCP certified?', a: 'Absolutely. Every doctor holds a valid LCP (Letter of Credentialing and Privileging) from the Ministry of Health Malaysia.' },
+            { q: 'Do you offer installment plans?', a: 'Yes, we offer 0% interest installments for up to 12 months for Maybank, CIMB, and Public Bank cardholders.' },
+            { q: ' Is there any downtime for laser treatments?', a: 'Most of our laser treatments have zero to minimal downtime (mild redness for 2-3 hours). You can return to work immediately.' },
+            { q: 'Do you provide Halal-certified options?', a: 'Yes, all our injectables and topical products are verified Halal-friendly and wudhu-compliant.' },
+            { q: 'What is the consultation fee?', a: 'Our consultation fee is RM150, which is fully waived if you proceed with any treatment on the same day.' }
         ]
     },
 
     // 2. Psychiatric Clinic
     {
-        slug: 'serene-minds',
+        slug: 'greenleaf-specialist',
         niche: 'Psychiatric Clinic',
-        title: 'Serene Minds Specialist',
+        title: 'Greenleaf Specialist Centre',
         headline: 'Mental Wellness, Demystified.',
         subheadline: 'Evidence-based psychiatric care and psychotherapy in a discreet, safe environment. Reclaim your peace of mind.',
         color: 'sky',
@@ -59,21 +64,24 @@ export const DEMOS = [
             { step: '03', title: 'Support', text: 'Regular check-ins to adjust treatment and ensure progress.' }
         ],
         reviews: [
-            { name: 'Anonymous', text: 'Dr. Sarah saved my career. I was burning out and she helped me find balance.', stars: 5 },
+            { name: 'Anonymous', text: 'Dr. Tan saved my career. I was burning out and she helped me find balance.', stars: 5 },
             { name: 'Jason L.', text: 'A very non-judgmental space. I felt heard for the first time in years.', stars: 5 },
             { name: 'Priya K.', text: 'Professional and discreet. The medication management is very precise.', stars: 5 }
         ],
         faq: [
-            { q: 'Do I need a referral letter?', a: 'No, you can book a consultation directly with us.' },
-            { q: 'Is it confidential?', a: 'Strictly. We do not share records without your explicit written consent.' }
+            { q: 'Do I need a referral letter?', a: 'No, as a private specialist centre, you can book a consultation directly with us without a referral.' },
+            { q: 'Is my visit confidential?', a: 'Strictly. We do not share records with employers, insurance companies, or family members without your explicit written consent.' },
+            { q: 'Can I claim insurance?', a: 'It depends on your policy. We can provide a detailed medical report for you to submit for reimbursement.' },
+            { q: 'Do you offer online sessions?', a: 'Yes, for follow-up appointments, we offer secure tele-consultations for your convenience.' },
+            { q: 'How long is a standard session?', a: 'First assessments are 60 minutes. Follow-up psychotherapy sessions are typically 45 minutes.' }
         ]
     },
 
     // 3. Dental Clinic
     {
-        slug: 'pearl-district',
+        slug: 'imperial-dental',
         niche: 'Dental Clinic',
-        title: 'Pearl District Dental',
+        title: 'Imperial Dental Bangsar',
         headline: 'Designing Smiles. Defining Confidence.',
         subheadline: 'Advanced cosmetic dentistry and implantology centre. Digital smile design for predictable, stunning results.',
         color: 'teal',
@@ -98,16 +106,19 @@ export const DEMOS = [
             { name: 'Ken W.', text: 'Best investment I ever made. My confidence has skyrocketed.', stars: 5 }
         ],
         faq: [
-            { q: 'Do you do Invisalign?', a: 'Yes, we are a Diamond Provider for Invisalign.' },
-            { q: 'Is there a warranty?', a: 'We offer a 5-year warranty on all ceramic crowns and veneers.' }
+            { q: 'Do you do Invisalign?', a: 'Yes, we are a Diamond Provider for Invisalign and have treated over 500 cases.' },
+            { q: 'Is there a warranty?', a: 'We offer a 5-year warranty on all ceramic crowns and veneers against breakage.' },
+            { q: 'I am afraid of dentists. Can you help?', a: 'We specialize in anxious patients. We offer sedation dentistry and a completely pain-free guarantee.' },
+            { q: 'Do you treat children?', a: 'Yes, we have a dedicated paediatric specialist who makes visits fun for kids.' },
+            { q: 'What brands of implants do you use?', a: 'We only use premium Swiss and German implants (Straumann and Nobel Biocare) for longevity.' }
         ]
     },
 
     // 4. Gym / Fitness
     {
-        slug: 'vanguard-strength',
+        slug: 'ironforge-barbell',
         niche: 'Gym',
-        title: 'Vanguard Strength',
+        title: 'IronForge Barbell Club',
         headline: 'Forged in Iron. Built by Science.',
         subheadline: 'Not just a gym. A performance facility. Small group training with certified coaches who track your every lift.',
         color: 'stone',
@@ -132,16 +143,19 @@ export const DEMOS = [
             { name: 'Danial', text: 'No waiting for racks. No influencers filming. Just hard work.', stars: 5 }
         ],
         faq: [
-            { q: 'Is this Crossfit?', a: 'No. We focus on structured strength training, not random WODs.' },
-            { q: 'Can beginners join?', a: 'Yes, our "Foundations" class is mandatory for all new lifters.' }
+            { q: 'Is this Crossfit?', a: 'No. We focus on structured strength training and powerlifting, avoiding the high-risk movements of random WODs.' },
+            { q: 'Can beginners join?', a: 'Yes! Our "Foundations" class is mandatory for all new lifters to ensure your technique is safe.' },
+            { q: 'Do you have shower facilities?', a: 'Yes, we have premium showers with towel service and hair dryers.' },
+            { q: 'What are your operating hours?', a: 'We are open 24/7 for members via keycard access. Staffed hours are 7am - 10pm.' },
+            { q: 'Is personal training included?', a: 'Our membership includes "Small Group Coaching" where a coach is always on the floor to guide you.' }
         ]
     },
 
     // 5. Physio Centre
     {
-        slug: 'kinetic-x',
+        slug: 'physioactive-rehab',
         niche: 'Physio Centre',
-        title: 'KineticX Centre',
+        title: 'PhysioActive Rehab',
         headline: 'Don\'t Just Recover. Optimize.',
         subheadline: 'Data-driven rehabilitation for elite athletes and corporate professionals. Fixing biomechanics, not just symptoms.',
         color: 'teal',
@@ -166,16 +180,19 @@ export const DEMOS = [
             { name: 'Coach Raj', text: 'I send all my injured players here. They come back stronger than before.', stars: 5 }
         ],
         faq: [
-            { q: 'Is this claimable?', a: 'Yes, we are panel providers for AIA, Prudential, and Great Eastern.' },
-            { q: 'Do I need a referral letter?', a: 'Not strictly necessary, but helpful for insurance claims.' }
+            { q: 'Is this claimable?', a: 'Yes, we are panel providers for AIA, Prudential, and Great Eastern. We handle the paperwork.' },
+            { q: 'Do I need a referral letter?', a: 'Not strictly necessary, but helpful for insurance claims. We can refer you to our partner GP if needed.' },
+            { q: 'What should I wear?', a: 'Please wear comfortable sports attire that allows us to access the injured area (e.g. shorts for knee injuries).' },
+            { q: 'How long is a session?', a: 'Initial assessment is 60 minutes. Subsequent treatment sessions are 45 minutes.' },
+            { q: 'Do you do home visits?', a: 'Yes, we have a mobile team for post-op patients who cannot travel.' }
         ]
     },
 
     // 6. Chiropractic Centre
     {
-        slug: 'axis-chiro',
+        slug: 'spineworks-chiro',
         niche: 'Chiropractic Centre',
-        title: 'Axis Spine & Health',
+        title: 'SpineWorks Chiropractic',
         headline: 'Realignment for Modern Life.',
         subheadline: 'Gonstead method chiropractic care focusing on nervous system interference. Correcting the "Tech Neck" epidemic.',
         color: 'indigo',
@@ -200,16 +217,19 @@ export const DEMOS = [
             { name: 'Uncle Bob', text: 'I can finally turn my neck to check blind spots while driving.', stars: 5 }
         ],
         faq: [
-            { q: 'Does it hurt?', a: 'Most patients feel immediate relief. There may be mild soreness like a gym workout.' },
-            { q: 'How many sessions?', a: 'It depends on the X-ray, but we focus on corrective care, not lifetime dependency.' }
+            { q: 'Does it hurt?', a: 'Most patients feel immediate relief. There may be mild soreness like a gym workout, which fades in 24 hours.' },
+            { q: 'How many sessions will I need?', a: 'It depends on your X-ray. We focus on corrective care (fixing the root) rather than lifetime dependency.' },
+            { q: 'Is it safe for elderly patients?', a: 'Yes, we use gentler, low-force techniques for seniors and children.' },
+            { q: 'Why is there a popping sound?', a: 'That is simply gas being released from the joint fluid. It is not bone rubbing on bone.' },
+            { q: 'Do I need to undress?', a: 'No, fully clothed adjustments. Just avoid wearing thick denim or tight belts.' }
         ]
     },
 
     // 7. Construction Company
     {
-        slug: 'ironwood-construct',
+        slug: 'grand-build-sdn-bhd',
         niche: 'Construction Company',
-        title: 'Ironwood Construct',
+        title: 'Grand Build Sdn Bhd',
         headline: 'Industrial Precision. Residential Soul.',
         subheadline: 'CIDB Grade G7 Contractors specializing in high-end bungalow construction and major structural renovations.',
         color: 'orange',
@@ -229,21 +249,24 @@ export const DEMOS = [
             { step: '03', title: 'Live Logs', text: 'Access daily site photos and logs via our client portal.' }
         ],
         reviews: [
-            { name: 'Mr. Tan', text: 'Ironwood took over my abandoned project and finished it in 4 months. Lifesavers.', stars: 5 },
+            { name: 'Mr. Tan', text: 'Grand Build took over my abandoned project and finished it in 4 months. Lifesavers.', stars: 5 },
             { name: 'Jason & Amy', text: 'The finishing on the exposed concrete is museum quality.', stars: 5 },
-            { name: 'Ar. Farhan', text: 'As an architect, I rarely enjoy working with builders. Ironwood is the exception.', stars: 5 }
+            { name: 'Ar. Farhan', text: 'As an architect, I rarely enjoy working with builders. Grand Build is the exception.', stars: 5 }
         ],
         faq: [
-            { q: 'Do you handle council submissions?', a: 'Yes, our in-house runner handles all DBKL/MBSA submissions.' },
-            { q: 'What is the retention sum?', a: 'We hold a standard 5% retention sum released after the defect liability period.' }
+            { q: 'Do you handle council submissions?', a: 'Yes, our in-house runner handles all DBKL/MBSA submissions and approvals.' },
+            { q: 'What is the retention sum?', a: 'We hold a standard 5% retention sum released 12 months after the defect liability period.' },
+            { q: 'Do you offer a warranty?', a: 'Yes, we provide a 24-month structural warranty on all new builds.' },
+            { q: 'What is your average cost per sqft?', a: 'For luxury finishes, our rates typically start from RM350 psf, inclusive of M&E.' },
+            { q: 'Can you help with renovation loans?', a: 'We can connect you with bankers from Maybank and Public Bank who specialize in construction loans.' }
         ]
     },
 
     // 8. Insurance Agent
     {
-        slug: 'sentinel-wealth',
+        slug: 'legacy-private-wealth',
         niche: 'Insurance Agent',
-        title: 'Sentinel Wealth Group',
+        title: 'Legacy Private Wealth',
         headline: 'Protecting Legacies, Not Just Selling Policies.',
         subheadline: 'Premier advisory for high-net-worth individuals. Comprehensive estate planning, medical coverage, and business succession.',
         color: 'slate',
@@ -259,7 +282,7 @@ export const DEMOS = [
         },
         process: [
             { step: '01', title: 'The Audit', text: 'Reviewing all your existing policies from any insurer.' },
-            { step: '02', title: 'Gap Analysis', text: 'identifying exposure in medical, critical illness, and income replacement.' },
+            { step: '02', title: 'Gap Analysis', text: 'Identifying exposure in medical, critical illness, and income replacement.' },
             { step: '03', title: 'The Trust', text: 'Structuring insurance payouts into a trust to protect beneficiaries.' }
         ],
         reviews: [
@@ -269,15 +292,18 @@ export const DEMOS = [
         ],
         faq: [
             { q: 'Do you charge a consultation fee?', a: 'No, our initial financial health check is complimentary.' },
-            { q: 'Which insurers do you represent?', a: 'We are a financial advisory group with access to multiple top-tier insurers.' }
+            { q: 'Which insurers do you represent?', a: 'We are a financial advisory group with access to multiple top-tier insurers including Allianz, AIA, and Great Eastern.' },
+            { q: 'Can you review my old policies?', a: 'Yes, we specialize in "Policy Audits" to find gaps or redundant coverages in your portfolio.' },
+            { q: 'Do you handle Hibah/Wasiat?', a: 'Yes, we have certified Islamic Estate Planners to assist with Wasiat and Hibah structuring.' },
+            { q: 'What happens if I need to claim?', a: 'You call us first. We handle the admission, the guarantee letter, and the paperwork.' }
         ]
     },
 
     // 9. Auto Detailing
     {
-        slug: 'blackbadge-studio',
+        slug: 'autobahn-detailing',
         niche: 'Auto Detailing',
-        title: 'Blackbadge Studio',
+        title: 'Autobahn Detailing',
         headline: 'Preserving Automotive Art.',
         subheadline: 'The authorized applicator for Gtechniq Ceramic & XPEL Paint Protection Film in Glenmarie.',
         color: 'indigo',
@@ -302,8 +328,11 @@ export const DEMOS = [
             { name: 'Alex W.', text: 'Interior detailing removed stains I thought were permanent.', stars: 5 }
         ],
         faq: [
-            { q: 'How long does it last?', a: 'Our Platinum Package is warrantied for 7 years.' },
-            { q: 'Do you offer pickup?', a: 'Yes, enclosed trailer pickup available for unregisterd or classic cars.' }
+            { q: 'How long does the coating last?', a: 'Our Platinum Package is warrantied for 7 years with proper maintenance.' },
+            { q: 'Do you offer pickup service?', a: 'Yes, enclosed trailer pickup is available for unregistered or classic cars.' },
+            { q: 'Is PPF better than Ceramic Coating?', a: 'PPF prevents rock chips and scratches. Ceramic Coating provides gloss and ease of cleaning. We often combine both.' },
+            { q: 'Do you remove seats for interior detailing?', a: 'Yes, we remove seats to deep clean the carpets and leather fully.' },
+            { q: 'Can you fix curb rash on rims?', a: 'Yes, we offer rim refurbishment and repainting services.' }
         ]
     },
 
@@ -322,14 +351,20 @@ export const DEMOS = [
             { label: 'returns', value: 'Free' }
         ],
         // E-com projects don't always need these fields for the grid, but keeping structure prevents errors
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: []
+        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
+            { q: 'How is the sizing?', a: 'True to size. We have a detailed measurement chart for every item.' },
+            { q: 'Do you ship internationally?', a: 'Yes, we ship to Singapore, Australia, and the UK.' },
+            { q: 'Where are your clothes made?', a: 'Designed in KL, and ethically manufactured in small batches in Vietnam.' },
+            { q: 'What is your return policy?', a: 'Free returns within 14 days of purchase, no questions asked.' },
+            { q: 'Are the fabrics pre-shrunk?', a: 'Yes, all our linens and cottons are pre-washed to minimize shrinkage.' }
+        ]
     },
 
     // 11. Dessert Shop (Lead Gen / Local)
     {
-        slug: 'gilded-crumb',
+        slug: 'sunday-bakes',
         niche: 'Dessert Shop',
-        title: 'The Gilded Crumb',
+        title: 'Sunday Bakes',
         headline: 'Artisanal Indulgence.',
         subheadline: 'Handcrafted French pastries and sourdough donuts. Using only French butter and Madagascan vanilla.',
         color: 'amber',
@@ -355,7 +390,10 @@ export const DEMOS = [
         ],
         faq: [
             { q: 'Do you deliver?', a: 'Yes, via GrabFood and Lalamove within 15km.' },
-            { q: 'Are you Halal?', a: 'We use all Halal-certified ingredients and no alcohol.' }
+            { q: 'Are you Halal?', a: 'We use all Halal-certified ingredients and no alcohol/lard in our kitchen.' },
+            { q: 'Do you make custom cakes?', a: 'Yes, we accept custom orders for weddings and birthdays with 3 days notice.' },
+            { q: 'Are your donuts vegan?', a: 'We have a specific vegan sourdough range available on weekends.' },
+            { q: 'Can I pre-order?', a: 'Highly recommended! You can WhatsApp us to secure your box before we sell out.' }
         ]
     },
 
@@ -369,7 +407,13 @@ export const DEMOS = [
         color: 'sky',
         image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=2000',
         stats: [{ label: 'vegan', value: '100%' }],
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: []
+        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
+             { q: 'Is this suitable for sensitive skin?', a: 'Yes, our entire line is fragrance-free and clinically tested for sensitive skin.' },
+             { q: 'Are your products vegan?', a: '100% Vegan and Cruelty-Free. We never test on animals.' },
+             { q: 'How long does shipping take?', a: 'Orders are processed within 24 hours. Delivery takes 2-4 working days.' },
+             { q: 'Can I use this with Retinol?', a: 'Our barrier cream is specifically designed to be used alongside Retinol to prevent dryness.' },
+             { q: 'Where is it made?', a: 'Formulated in Korea, bottled in Malaysia.' }
+        ]
     },
 
     // 13. Tech Gadgets
@@ -382,6 +426,12 @@ export const DEMOS = [
         color: 'zinc',
         image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=2000',
         stats: [{ label: 'battery', value: '40hr' }],
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: []
+        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
+            { q: 'Does it have multipoint connection?', a: 'Yes, you can connect to your laptop and phone simultaneously.' },
+            { q: 'How is the microphone quality?', a: 'We use 4 beamforming mics to isolate your voice from background noise.' },
+            { q: 'Is there a warranty?', a: '2-Year International Warranty covers all manufacturing defects.' },
+            { q: 'Does it support LDAP?', a: 'Yes, high-res LDAP and AptX codecs are supported on Android devices.' },
+            { q: ' Is it water resistant?', a: 'IPX4 rated, so it can handle sweat and light rain.' }
+        ]
     }
 ];
