@@ -1,5 +1,3 @@
-// src/data/demos.ts
-
 export const DEMOS = [
     // --- SERVICE / LEAD GEN ---
 
@@ -11,7 +9,7 @@ export const DEMOS = [
         headline: 'Where Medical Science Meets Artistry.',
         subheadline: 'A boutique medical aesthetic centre in Bangsar South. FDA-approved technologies for subtle, sophisticated enhancement.',
         color: 'rose',
-        image: 'https://images.unsplash.com/photo-1555820585-c5ae44394b79?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
+        image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=2000', 
         stats: [
             { label: 'procedures performed', value: '12k+' },
             { label: 'doctors on board', value: '4' },
@@ -32,11 +30,11 @@ export const DEMOS = [
             { name: 'Chloe T.', text: 'Impeccable service. The private waiting rooms are a nice touch.', stars: 5 }
         ],
         faq: [
-            { q: 'Are your doctors LCP certified?', a: 'Absolutely. Every doctor holds a valid LCP (Letter of Credentialing and Privileging) from the Ministry of Health Malaysia.' },
-            { q: 'Do you offer installment plans?', a: 'Yes, we offer 0% interest installments for up to 12 months for Maybank, CIMB, and Public Bank cardholders.' },
-            { q: ' Is there any downtime for laser treatments?', a: 'Most of our laser treatments have zero to minimal downtime (mild redness for 2-3 hours). You can return to work immediately.' },
-            { q: 'Do you provide Halal-certified options?', a: 'Yes, all our injectables and topical products are verified Halal-friendly and wudhu-compliant.' },
-            { q: 'What is the consultation fee?', a: 'Our consultation fee is RM150, which is fully waived if you proceed with any treatment on the same day.' }
+            { q: 'Are your doctors LCP certified?', a: 'Absolutely. Every doctor holds a valid LCP from the Ministry of Health Malaysia.' },
+            { q: 'Do you offer installment plans?', a: 'Yes, we offer 0% interest installments for Maybank and CIMB cardholders.' },
+            { q: 'Is there any downtime?', a: 'Most of our laser treatments have zero to minimal downtime. You can return to work immediately.' },
+            { q: 'Do you provide Halal options?', a: 'Yes, all our injectables and topical products are verified Halal-friendly.' },
+            { q: 'What is the consultation fee?', a: 'RM150, which is fully waived if you proceed with any treatment on the same day.' }
         ]
     },
 
@@ -69,11 +67,11 @@ export const DEMOS = [
             { name: 'Priya K.', text: 'Professional and discreet. The medication management is very precise.', stars: 5 }
         ],
         faq: [
-            { q: 'Do I need a referral letter?', a: 'No, as a private specialist centre, you can book a consultation directly with us without a referral.' },
-            { q: 'Is my visit confidential?', a: 'Strictly. We do not share records with employers, insurance companies, or family members without your explicit written consent.' },
-            { q: 'Can I claim insurance?', a: 'It depends on your policy. We can provide a detailed medical report for you to submit for reimbursement.' },
-            { q: 'Do you offer online sessions?', a: 'Yes, for follow-up appointments, we offer secure tele-consultations for your convenience.' },
-            { q: 'How long is a standard session?', a: 'First assessments are 60 minutes. Follow-up psychotherapy sessions are typically 45 minutes.' }
+            { q: 'Do I need a referral letter?', a: 'No, you can book a consultation directly with us.' },
+            { q: 'Is it confidential?', a: 'Strictly. We do not share records without your explicit written consent.' },
+            { q: 'Can I claim insurance?', a: 'It depends on your policy. We can provide a detailed medical report for submission.' },
+            { q: 'Do you offer online sessions?', a: 'Yes, secure tele-consultations are available for follow-ups.' },
+            { q: 'How long is a session?', a: 'First assessments are 60 minutes. Therapy sessions are 45 minutes.' }
         ]
     },
 
@@ -106,11 +104,11 @@ export const DEMOS = [
             { name: 'Ken W.', text: 'Best investment I ever made. My confidence has skyrocketed.', stars: 5 }
         ],
         faq: [
-            { q: 'Do you do Invisalign?', a: 'Yes, we are a Diamond Provider for Invisalign and have treated over 500 cases.' },
-            { q: 'Is there a warranty?', a: 'We offer a 5-year warranty on all ceramic crowns and veneers against breakage.' },
-            { q: 'I am afraid of dentists. Can you help?', a: 'We specialize in anxious patients. We offer sedation dentistry and a completely pain-free guarantee.' },
-            { q: 'Do you treat children?', a: 'Yes, we have a dedicated paediatric specialist who makes visits fun for kids.' },
-            { q: 'What brands of implants do you use?', a: 'We only use premium Swiss and German implants (Straumann and Nobel Biocare) for longevity.' }
+            { q: 'Do you do Invisalign?', a: 'Yes, we are a Diamond Provider for Invisalign.' },
+            { q: 'Is there a warranty?', a: 'We offer a 5-year warranty on all ceramic crowns and veneers.' },
+            { q: 'I am afraid of dentists. Can you help?', a: 'We specialize in anxious patients with sedation options.' },
+            { q: 'Do you treat children?', a: 'Yes, we have a dedicated paediatric specialist.' },
+            { q: 'What brands of implants do you use?', a: 'Premium Swiss and German implants (Straumann and Nobel Biocare) only.' }
         ]
     },
 
@@ -143,11 +141,11 @@ export const DEMOS = [
             { name: 'Danial', text: 'No waiting for racks. No influencers filming. Just hard work.', stars: 5 }
         ],
         faq: [
-            { q: 'Is this Crossfit?', a: 'No. We focus on structured strength training and powerlifting, avoiding the high-risk movements of random WODs.' },
-            { q: 'Can beginners join?', a: 'Yes! Our "Foundations" class is mandatory for all new lifters to ensure your technique is safe.' },
-            { q: 'Do you have shower facilities?', a: 'Yes, we have premium showers with towel service and hair dryers.' },
-            { q: 'What are your operating hours?', a: 'We are open 24/7 for members via keycard access. Staffed hours are 7am - 10pm.' },
-            { q: 'Is personal training included?', a: 'Our membership includes "Small Group Coaching" where a coach is always on the floor to guide you.' }
+            { q: 'Is this Crossfit?', a: 'No. We focus on structured strength training, not random WODs.' },
+            { q: 'Can beginners join?', a: 'Yes, our "Foundations" class is mandatory for all new lifters.' },
+            { q: 'Do you have showers?', a: 'Yes, premium showers with towel service included.' },
+            { q: 'Operating hours?', a: '24/7 keycard access. Staffed hours 7am-10pm.' },
+            { q: 'Is PT included?', a: 'Small Group Coaching is included in the membership.' }
         ]
     },
 
@@ -180,11 +178,11 @@ export const DEMOS = [
             { name: 'Coach Raj', text: 'I send all my injured players here. They come back stronger than before.', stars: 5 }
         ],
         faq: [
-            { q: 'Is this claimable?', a: 'Yes, we are panel providers for AIA, Prudential, and Great Eastern. We handle the paperwork.' },
-            { q: 'Do I need a referral letter?', a: 'Not strictly necessary, but helpful for insurance claims. We can refer you to our partner GP if needed.' },
-            { q: 'What should I wear?', a: 'Please wear comfortable sports attire that allows us to access the injured area (e.g. shorts for knee injuries).' },
-            { q: 'How long is a session?', a: 'Initial assessment is 60 minutes. Subsequent treatment sessions are 45 minutes.' },
-            { q: 'Do you do home visits?', a: 'Yes, we have a mobile team for post-op patients who cannot travel.' }
+            { q: 'Is this claimable?', a: 'Yes, we are panel providers for AIA, Prudential, and Great Eastern.' },
+            { q: 'Do I need a referral?', a: 'Not strictly necessary, but helpful for insurance claims.' },
+            { q: 'What should I wear?', a: 'Comfortable sports attire.' },
+            { q: 'Session duration?', a: '60 mins for assessment, 45 mins for treatment.' },
+            { q: 'Do you do home visits?', a: 'Yes, for post-op patients.' }
         ]
     },
 
@@ -217,11 +215,11 @@ export const DEMOS = [
             { name: 'Uncle Bob', text: 'I can finally turn my neck to check blind spots while driving.', stars: 5 }
         ],
         faq: [
-            { q: 'Does it hurt?', a: 'Most patients feel immediate relief. There may be mild soreness like a gym workout, which fades in 24 hours.' },
-            { q: 'How many sessions will I need?', a: 'It depends on your X-ray. We focus on corrective care (fixing the root) rather than lifetime dependency.' },
-            { q: 'Is it safe for elderly patients?', a: 'Yes, we use gentler, low-force techniques for seniors and children.' },
-            { q: 'Why is there a popping sound?', a: 'That is simply gas being released from the joint fluid. It is not bone rubbing on bone.' },
-            { q: 'Do I need to undress?', a: 'No, fully clothed adjustments. Just avoid wearing thick denim or tight belts.' }
+            { q: 'Does it hurt?', a: 'Most patients feel immediate relief. Mild soreness is normal.' },
+            { q: 'How many sessions?', a: 'Depends on the X-ray, but we focus on corrective care.' },
+            { q: 'Is it safe for elderly?', a: 'Yes, we use gentler techniques for seniors.' },
+            { q: 'Why the popping sound?', a: 'It is just gas releasing from the joint fluid.' },
+            { q: 'Do I need to undress?', a: 'No, fully clothed adjustments.' }
         ]
     },
 
@@ -254,11 +252,11 @@ export const DEMOS = [
             { name: 'Ar. Farhan', text: 'As an architect, I rarely enjoy working with builders. Grand Build is the exception.', stars: 5 }
         ],
         faq: [
-            { q: 'Do you handle council submissions?', a: 'Yes, our in-house runner handles all DBKL/MBSA submissions and approvals.' },
-            { q: 'What is the retention sum?', a: 'We hold a standard 5% retention sum released 12 months after the defect liability period.' },
-            { q: 'Do you offer a warranty?', a: 'Yes, we provide a 24-month structural warranty on all new builds.' },
-            { q: 'What is your average cost per sqft?', a: 'For luxury finishes, our rates typically start from RM350 psf, inclusive of M&E.' },
-            { q: 'Can you help with renovation loans?', a: 'We can connect you with bankers from Maybank and Public Bank who specialize in construction loans.' }
+            { q: 'Do you handle council submissions?', a: 'Yes, our in-house runner handles all DBKL/MBSA submissions.' },
+            { q: 'What is the retention sum?', a: 'Standard 5% released after defect liability period.' },
+            { q: 'Warranty?', a: '24-month structural warranty on new builds.' },
+            { q: 'Cost per sqft?', a: 'Starts from RM350 psf for luxury finishes.' },
+            { q: 'Renovation loans?', a: 'We can connect you with specialized construction bankers.' }
         ]
     },
 
@@ -291,11 +289,11 @@ export const DEMOS = [
             { name: 'Alex H.', text: 'No hard selling. They actually advised me to cancel a bad policy I had.', stars: 5 }
         ],
         faq: [
-            { q: 'Do you charge a consultation fee?', a: 'No, our initial financial health check is complimentary.' },
-            { q: 'Which insurers do you represent?', a: 'We are a financial advisory group with access to multiple top-tier insurers including Allianz, AIA, and Great Eastern.' },
-            { q: 'Can you review my old policies?', a: 'Yes, we specialize in "Policy Audits" to find gaps or redundant coverages in your portfolio.' },
-            { q: 'Do you handle Hibah/Wasiat?', a: 'Yes, we have certified Islamic Estate Planners to assist with Wasiat and Hibah structuring.' },
-            { q: 'What happens if I need to claim?', a: 'You call us first. We handle the admission, the guarantee letter, and the paperwork.' }
+            { q: 'Consultation fee?', a: 'No, initial financial health check is complimentary.' },
+            { q: 'Which insurers?', a: 'We represent multiple top-tier insurers like Allianz, AIA, Great Eastern.' },
+            { q: 'Can you review old policies?', a: 'Yes, we specialize in Policy Audits.' },
+            { q: 'Do you handle Hibah?', a: 'Yes, certified Islamic Estate Planners available.' },
+            { q: 'Claims process?', a: 'You call us first. We handle everything.' }
         ]
     },
 
@@ -328,15 +326,15 @@ export const DEMOS = [
             { name: 'Alex W.', text: 'Interior detailing removed stains I thought were permanent.', stars: 5 }
         ],
         faq: [
-            { q: 'How long does the coating last?', a: 'Our Platinum Package is warrantied for 7 years with proper maintenance.' },
-            { q: 'Do you offer pickup service?', a: 'Yes, enclosed trailer pickup is available for unregistered or classic cars.' },
-            { q: 'Is PPF better than Ceramic Coating?', a: 'PPF prevents rock chips and scratches. Ceramic Coating provides gloss and ease of cleaning. We often combine both.' },
-            { q: 'Do you remove seats for interior detailing?', a: 'Yes, we remove seats to deep clean the carpets and leather fully.' },
-            { q: 'Can you fix curb rash on rims?', a: 'Yes, we offer rim refurbishment and repainting services.' }
+            { q: 'How long does it last?', a: 'Platinum Package is warrantied for 7 years.' },
+            { q: 'Do you offer pickup?', a: 'Yes, enclosed trailer pickup available.' },
+            { q: 'PPF vs Ceramic?', a: 'PPF for rock chips, Ceramic for gloss. We recommend both.' },
+            { q: 'Interior detailing?', a: 'Yes, we remove seats for deep cleaning.' },
+            { q: 'Rim repair?', a: 'Yes, we offer rim refurbishment.' }
         ]
     },
 
-    // 10. Clothing Brand (E-Commerce)
+    // 10. Clothing Brand (E-Commerce) - FIXED DATA
     {
         slug: 'aura-stitch',
         niche: 'Clothing Brand',
@@ -350,13 +348,26 @@ export const DEMOS = [
             { label: 'plastic free', value: '100%' },
             { label: 'returns', value: 'Free' }
         ],
-        // E-com projects don't always need these fields for the grid, but keeping structure prevents errors
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
-            { q: 'How is the sizing?', a: 'True to size. We have a detailed measurement chart for every item.' },
-            { q: 'Do you ship internationally?', a: 'Yes, we ship to Singapore, Australia, and the UK.' },
-            { q: 'Where are your clothes made?', a: 'Designed in KL, and ethically manufactured in small batches in Vietnam.' },
-            { q: 'What is your return policy?', a: 'Free returns within 14 days of purchase, no questions asked.' },
-            { q: 'Are the fabrics pre-shrunk?', a: 'Yes, all our linens and cottons are pre-washed to minimize shrinkage.' }
+        problem: {
+            title: 'Fast fashion is failing us.',
+            text: 'Cheap synthetic fabrics trap heat and fall apart after three washes. We believe in buying less, but buying better.'
+        },
+        process: [
+            { step: '01', title: 'Sourcing', text: 'We visit every farm to ensure sustainable growth.' },
+            { step: '02', title: 'Weaving', text: 'Small batch production reduces waste.' },
+            { step: '03', title: 'Testing', text: 'Wear-tested in high humidity for comfort.' }
+        ],
+        reviews: [
+            { name: 'Jessica L.', text: 'The linen trousers are a lifesaver for KL heat. So breathable.', stars: 5 },
+            { name: 'Omar K.', text: 'Finally a local brand with international quality cutting.', stars: 5 },
+            { name: 'Tanya', text: 'Packaging was beautiful and compostable.', stars: 5 }
+        ],
+        faq: [
+            { q: 'How is the sizing?', a: 'True to size. See measurement chart.' },
+            { q: 'International shipping?', a: 'Yes, to SG, AU, and UK.' },
+            { q: 'Where is it made?', a: 'Designed in KL, made in Vietnam.' },
+            { q: 'Return policy?', a: 'Free returns within 14 days.' },
+            { q: 'Pre-shrunk?', a: 'Yes, washed to minimize shrinkage.' }
         ]
     },
 
@@ -390,14 +401,14 @@ export const DEMOS = [
         ],
         faq: [
             { q: 'Do you deliver?', a: 'Yes, via GrabFood and Lalamove within 15km.' },
-            { q: 'Are you Halal?', a: 'We use all Halal-certified ingredients and no alcohol/lard in our kitchen.' },
-            { q: 'Do you make custom cakes?', a: 'Yes, we accept custom orders for weddings and birthdays with 3 days notice.' },
-            { q: 'Are your donuts vegan?', a: 'We have a specific vegan sourdough range available on weekends.' },
-            { q: 'Can I pre-order?', a: 'Highly recommended! You can WhatsApp us to secure your box before we sell out.' }
+            { q: 'Are you Halal?', a: 'We use all Halal-certified ingredients and no alcohol.' },
+            { q: 'Custom cakes?', a: 'Yes, with 3 days notice.' },
+            { q: 'Vegan options?', a: 'Vegan sourdough donuts available weekends.' },
+            { q: 'Pre-order?', a: 'Highly recommended via WhatsApp.' }
         ]
     },
 
-    // 12. Skincare
+    // 12. Skincare - FIXED DATA
     {
         slug: 'lumina-botanicals',
         niche: 'Skincare',
@@ -406,17 +417,31 @@ export const DEMOS = [
         subheadline: 'Clean, clinical-grade skincare formulations focusing on barrier repair and hydration.',
         color: 'sky',
         image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=2000',
-        stats: [{ label: 'vegan', value: '100%' }],
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
-             { q: 'Is this suitable for sensitive skin?', a: 'Yes, our entire line is fragrance-free and clinically tested for sensitive skin.' },
-             { q: 'Are your products vegan?', a: '100% Vegan and Cruelty-Free. We never test on animals.' },
-             { q: 'How long does shipping take?', a: 'Orders are processed within 24 hours. Delivery takes 2-4 working days.' },
-             { q: 'Can I use this with Retinol?', a: 'Our barrier cream is specifically designed to be used alongside Retinol to prevent dryness.' },
-             { q: 'Where is it made?', a: 'Formulated in Korea, bottled in Malaysia.' }
+        stats: [{ label: 'vegan', value: '100%' }, { label: 'cruelty free', value: 'Yes' }, { label: 'rating', value: '4.8' }],
+        problem: {
+            title: 'Harsh chemicals are damaging your barrier.',
+            text: 'Most skincare is stripped of nutrients and packed with fillers. We use cold-pressed botanicals to feed your skin.'
+        },
+        process: [
+            { step: '01', title: 'Harvest', text: 'Sourced from organic farms.' },
+            { step: '02', title: 'Cold Press', text: 'Extracted without heat to preserve nutrients.' },
+            { step: '03', title: 'Bottling', text: 'Small batches to ensure freshness.' }
+        ],
+        reviews: [
+            { name: 'Amanda T.', text: 'My skin barrier was destroyed by acids. This serum fixed it in a week.', stars: 5 },
+            { name: 'Dr. Yasmin', text: 'Clean ingredients list. No fillers. Highly recommend.', stars: 5 },
+            { name: 'Chloe', text: 'The texture is divine. Sinks right in without feeling greasy.', stars: 5 }
+        ],
+        faq: [
+             { q: 'Suitable for sensitive skin?', a: 'Yes, fragrance-free and clinically tested.' },
+             { q: 'Vegan?', a: '100% Vegan and Cruelty-Free.' },
+             { q: 'Shipping time?', a: '2-4 working days.' },
+             { q: 'Use with Retinol?', a: 'Yes, our barrier cream pairs perfectly with Retinol.' },
+             { q: 'Origin?', a: 'Formulated in Korea, bottled in Malaysia.' }
         ]
     },
 
-    // 13. Tech Gadgets
+    // 13. Tech Gadgets - FIXED DATA
     {
         slug: 'nexus-audio',
         niche: 'Tech Gadgets',
@@ -425,13 +450,27 @@ export const DEMOS = [
         subheadline: 'High-fidelity audio equipment for creators and audiophiles. Engineered in Tokyo.',
         color: 'zinc',
         image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=2000',
-        stats: [{ label: 'battery', value: '40hr' }],
-        problem: { title: '', text: '' }, process: [], reviews: [], faq: [
-            { q: 'Does it have multipoint connection?', a: 'Yes, you can connect to your laptop and phone simultaneously.' },
-            { q: 'How is the microphone quality?', a: 'We use 4 beamforming mics to isolate your voice from background noise.' },
-            { q: 'Is there a warranty?', a: '2-Year International Warranty covers all manufacturing defects.' },
-            { q: 'Does it support LDAP?', a: 'Yes, high-res LDAP and AptX codecs are supported on Android devices.' },
-            { q: ' Is it water resistant?', a: 'IPX4 rated, so it can handle sweat and light rain.' }
+        stats: [{ label: 'battery', value: '40hr' }, { label: 'drivers', value: '40mm' }, { label: 'warranty', value: '2yr' }],
+        problem: {
+            title: 'You are hearing half the music.',
+            text: 'Standard earbuds compress audio, losing the detail. Nexus drivers reveal the layers you missed.'
+        },
+        process: [
+            { step: '01', title: 'Tune', text: 'Tuned by Japanese acoustic labs.' },
+            { step: '02', title: 'Test', text: 'Anechoic chamber testing for perfect isolation.' },
+            { step: '03', title: 'Build', text: 'Aerospace grade aluminum chassis.' }
+        ],
+        reviews: [
+            { name: 'Audiophile99', text: 'The soundstage on these headphones rivals my $1000 setup.', stars: 5 },
+            { name: 'Producer Mike', text: 'Flat response curve. Perfect for mixing on the go.', stars: 5 },
+            { name: 'Sarah G.', text: 'ANC is better than Sony. Silence on my flight.', stars: 5 }
+        ],
+        faq: [
+            { q: 'Multipoint connection?', a: 'Yes, connect laptop and phone simultaneously.' },
+            { q: 'Mic quality?', a: '4 beamforming mics for crystal clear calls.' },
+            { q: 'Warranty?', a: '2-Year International Warranty.' },
+            { q: 'LDAP support?', a: 'Yes, high-res LDAP and AptX supported.' },
+            { q: 'Water resistant?', a: 'IPX4 rated for sweat.' }
         ]
     }
 ];
