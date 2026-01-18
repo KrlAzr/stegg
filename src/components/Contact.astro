@@ -1,83 +1,121 @@
 ---
-
 // src/components/Contact.astro
-
 ---
-
 <section class="py-16 bg-slate-900 border-t border-slate-800 relative overflow-hidden" id="contact">
-
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-
         
-
         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-
             Let's build your asset.
-
         </h2>
-
         
-
         <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-
             We are currently accepting new projects for {new Date().getFullYear()}. <br />
-
-            Select a time below to discuss your business goals.
-
+            Choose how you want to start.
         </p>
 
+        <div class="flex justify-center mb-8">
+            <div class="bg-slate-800 p-1 rounded-xl inline-flex border border-slate-700 relative z-20">
+                <button id="btn-whatsapp" class="px-6 py-2 rounded-lg text-sm font-bold text-white bg-[#25D366] shadow-lg transition-all flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                    WhatsApp
+                </button>
+                <button id="btn-calendar" class="px-6 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-white transition-all flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    Book Call
+                </button>
+            </div>
+        </div>
 
-
-        <div class="w-full max-w-[880px] mx-auto bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden relative min-h-[500px]">
-
+        <div class="w-full max-w-[880px] mx-auto bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden relative min-h-[500px] flex flex-col">
             
+            <div id="view-whatsapp" class="w-full h-full flex flex-col items-center justify-center p-8 md:p-16 text-center grow">
+                
+                <div class="w-20 h-20 bg-[#25D366]/10 rounded-full flex items-center justify-center mb-6 border border-[#25D366]/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                </div>
 
-            <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-stegg-appointment"></div>
+                <h3 class="text-2xl font-bold text-white mb-3">Fastest Response Time</h3>
+                <p class="text-slate-400 max-w-md mb-8 leading-relaxed">
+                    Skip the formalities. Chat directly with us, we love to hear your challenges and how we can help you scale your business.
+                </p>
 
-            
-
-            <script type="text/javascript" is:inline>
-
-              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-
-              Cal("init", "stegg-appointment", {origin:"https://app.cal.com"});
-
-            
-
-              Cal.ns["stegg-appointment"]("inline", {
-
-                elementOrSelector:"#my-cal-inline-stegg-appointment",
-
-                config: {"layout":"month_view", "theme":"dark"},
-
-                calLink: "steggdev/stegg-appointment",
-
-              });
-
-            
-
-              Cal.ns["stegg-appointment"]("ui", {"hideEventTypeDetails":false,"layout":"month_view", "theme":"dark"});
-
-            </script>
-
+                <a href="https://wa.me/60196700413?text=Hi,%20I%20am%20interested%20to%20know%20more%20about%20Stegg%20website%20service." target="_blank" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-lg font-bold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-green-900/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+                    Start WhatsApp Chat
+                </a>
+                
+                <p class="text-xs text-slate-500 mt-6">
+                    Typical reply time: <span class="text-slate-300 font-medium">Under 30 Minutes</span>
+                </p>
             </div>
 
-
-
-        <div class="mt-8 flex items-center justify-center gap-2 text-slate-500 text-sm">
-
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-
-            <span>Limited slots available for this month</span>
+            <div id="view-calendar" class="hidden transition-opacity duration-300 w-full h-full relative min-h-[600px]">
+                <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-stegg-appointment"></div>
+                
+                <script type="text/javascript" is:inline>
+                  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                  Cal("init", "stegg-appointment", {origin:"https://app.cal.com"});
+                
+                  Cal.ns["stegg-appointment"]("inline", {
+                    elementOrSelector:"#my-cal-inline-stegg-appointment",
+                    config: {"layout":"month_view", "theme":"dark"},
+                    calLink: "steggdev/stegg-appointment",
+                  });
+                
+                  Cal.ns["stegg-appointment"]("ui", {
+                      "hideEventTypeDetails":false,
+                      "layout":"month_view", 
+                      "theme":"dark",
+                      "hideBranding": true
+                  });
+                </script>
+                <div class="absolute bottom-0 left-0 w-full h-[44px] bg-slate-800 z-50 pointer-events-auto rounded-b-2xl border-t border-slate-700/50"></div>
+            </div>
 
         </div>
 
-
+        <div class="mt-8 flex items-center justify-center gap-2 text-slate-500 text-sm">
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span>Limited slots available for this month</span>
+        </div>
 
     </div>
-
 </section>
+
+<script>
+    // Toggle logic
+    const btnWhatsapp = document.getElementById('btn-whatsapp');
+    const btnCalendar = document.getElementById('btn-calendar');
+    const viewWhatsapp = document.getElementById('view-whatsapp');
+    const viewCalendar = document.getElementById('view-calendar');
+
+    if(btnWhatsapp && btnCalendar && viewWhatsapp && viewCalendar) {
+        btnWhatsapp.addEventListener('click', () => {
+            // Activate WhatsApp
+            viewWhatsapp.classList.remove('hidden');
+            viewCalendar.classList.add('hidden');
+            
+            // Update Buttons
+            btnWhatsapp.classList.add('bg-[#25D366]', 'text-white', 'shadow-lg');
+            btnWhatsapp.classList.remove('text-slate-400');
+            
+            btnCalendar.classList.remove('bg-blue-600', 'text-white', 'shadow-lg');
+            btnCalendar.classList.add('text-slate-400');
+        });
+
+        btnCalendar.addEventListener('click', () => {
+            // Activate Calendar
+            viewCalendar.classList.remove('hidden');
+            viewWhatsapp.classList.add('hidden');
+            
+            // Update Buttons
+            btnCalendar.classList.add('bg-blue-600', 'text-white', 'shadow-lg');
+            btnCalendar.classList.remove('text-slate-400');
+            
+            btnWhatsapp.classList.remove('bg-[#25D366]', 'text-white', 'shadow-lg');
+            btnWhatsapp.classList.add('text-slate-400');
+        });
+    }
+</script>
