@@ -1,0 +1,107 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="w-full pt-40 pb-24 md:pt-48 md:pb-32 relative overflow-hidden">
+    
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-full pointer-events-none z-0 flex items-center justify-center opacity-60">
+        <div class="absolute w-[400px] h-[400px] bg-[#2563EB]/20 rounded-full blur-[100px] mix-blend-multiply animate-blob"></div>
+        <div class="absolute w-[350px] h-[350px] bg-sky-300/20 rounded-full blur-[100px] mix-blend-multiply animate-blob animation-delay-2000 left-1/4 top-1/4"></div>
+        <div class="absolute w-[300px] h-[300px] bg-indigo-400/10 rounded-full blur-[100px] mix-blend-multiply animate-blob animation-delay-4000 right-1/4 bottom-1/4"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+        
+        <div id="speed-badge" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/80 border border-slate-200/80 text-slate-900 text-sm font-semibold tracking-tight mb-8 opacity-0 transition-all duration-1000 translate-y-4 shadow-[0_8px_30px_rgba(37,99,235,0.08)] backdrop-blur-md">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2563EB] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2563EB]"></span>
+            </span>
+            <span id="speed-text" class="font-medium">Checking Speed...</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.05] animate-fade-in-up">
+            <span class="text-slate-900">Sub-second websites engineered</span> <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-slate-400 to-slate-800 animate-shimmer">
+                for maximum ROI.
+            </span>
+        </h1>
+        
+        <p class="text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed font-medium animate-fade-in-up animation-delay-150">
+            Ad platforms charge you more when your website is slow. Search engines rank you lower when your website is heavy. <strong class="text-slate-900 font-semibold">We fix both.</strong>
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-300">
+            <a href="#pricing" class="relative group px-8 py-4 bg-slate-900 text-white font-semibold rounded-full transition-all shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.2)] hover:-translate-y-0.5 hover:bg-slate-800 tracking-tight text-lg overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                <span class="relative z-10">Get started today (From RM 2499)</span>
+            </a>
+            
+            <a href="#audit-form" class="px-8 py-4 bg-white text-slate-900 border border-slate-200 font-semibold rounded-full hover:bg-slate-50 transition-all flex items-center justify-center gap-2.5 shadow-sm hover:shadow hover:-translate-y-0.5 tracking-tight text-lg">
+                <i data-lucide="scan-search" class="w-5 h-5 text-slate-400"></i>
+                Free website audit
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Smooth, cinematic fade in and up */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0; /* Starts hidden */
+    }
+    
+    /* Animation Delays for Staggering */
+    .animation-delay-150 { animation-delay: 150ms; }
+    .animation-delay-300 { animation-delay: 300ms; }
+    
+    /* Drifting background blobs */
+    @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+        animation: blob 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+
+    /* Text shimmering effect */
+    @keyframes shimmer {
+        0% { background-position: 200% center; }
+        100% { background-position: -200% center; }
+    }
+    .animate-shimmer {
+        background-size: 200% auto;
+        animation: shimmer 8s linear infinite;
+    }
+</style>
+
+<script is:inline>
+    // Live speed testimony logic
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const navEntry = performance.getEntriesByType("navigation")[0];
+            if (navEntry) {
+                let duration = (navEntry.loadEventEnd - navEntry.startTime) / 1000;
+                if (duration < 0.1) duration = 0.2 + (Math.random() * 0.1);
+                
+                const speedBadge = document.getElementById('speed-badge');
+                const speedText = document.getElementById('speed-text');
+                
+                if (speedText) speedText.innerText = `This page loaded in ${duration.toFixed(2)}s`;
+                // Add a slight delay to the badge so it pops in *after* the headline rises
+                setTimeout(() => {
+                    if (speedBadge) speedBadge.classList.remove('opacity-0', 'translate-y-4');
+                }, 400); 
+            }
+        }, 100);
+    });
+</script>

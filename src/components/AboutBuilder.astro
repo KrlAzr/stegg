@@ -1,0 +1,41 @@
+---
+// src/components/AboutBuilder.astro
+---
+
+<section id="about" class="max-w-4xl mx-auto px-6 mb-32 relative scroll-mt-32">
+    <div class="bg-slate-950 border border-slate-800 rounded-[3rem] p-10 md:p-16 shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+        
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#2563EB]/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-700"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-[#2563EB]/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            
+            <div class="text-center mb-8">
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-2 tracking-tight">Khairul Azri</h3>
+                <p class="text-lg text-[#2563EB] font-semibold tracking-wide">Founder & Performance Marketer</p>
+            </div>
+            
+            <div class="space-y-6 text-slate-300 leading-relaxed font-medium text-lg text-center md:text-left">
+                <p>
+                    With nearly a decade of experience building marketing funnels and automation systems, I've seen exactly where businesses bleed money. The biggest culprit? A beautiful but bloated website that takes too long to load.
+                </p>
+                <p>
+                    Most web design agencies focus entirely on aesthetics. I built Stegg.dev because I know that <strong class="text-white font-semibold">performance is marketing.</strong> Every line of code we write is engineered to lower your ad costs, stop mobile bounce rates, and make your funnel actually convert.
+                </p>
+            </div>
+
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-white/10 w-full">
+                <a href="https://wa.me/60196700413?text=Hi%20Khairul,%20I'd%20love%20to%20chat%20about%20fixing%20my%20website's%20performance." class="text-white font-bold hover:text-[#2563EB] transition-colors flex items-center gap-2 underline decoration-white/30 underline-offset-4 hover:decoration-[#2563EB]">
+                    Chat on WhatsApp
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/khairulazri/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 font-semibold">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    Connect on LinkedIn
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+---
+// src/components/Footer.astro
+const year = new Date().getFullYear();
+---
+<footer class="bg-white py-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-2 gap-10 items-center border-b border-slate-100 pb-12 mb-8">
+            
+            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                <a href="/" class="flex items-center justify-center md:justify-start mb-4 group">
+                    <img 
+                        src="/logo.png" 
+                        alt="Stegg.dev Logo" 
+                        class="h-10 w-auto transition-transform duration-300 group-hover:-translate-y-0.5" 
+                    />
+                </a>
+                <p class="text-slate-500 text-sm font-medium max-w-xs">
+                    High-performance websites engineered for modern local businesses.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4 text-sm font-semibold text-slate-600">
+                <a href="/#why-stegg" class="hover:text-[#2563EB] transition-colors">Why Stegg</a>
+                <a href="/#pricing" class="hover:text-[#2563EB] transition-colors">Pricing</a>
+                <a href="/#about" class="hover:text-[#2563EB] transition-colors">About Us</a>
+            </div>
+            
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-400">
+            <p>&copy; {year} Stegg Systems. All rights reserved. Located in Malaysia.</p>
+            
+            <div class="flex items-center gap-1">
+                <span>Engineered for performance.</span>
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-[#2563EB]"></i>
+            </div>
+        </div>
+
+    </div>
+</footer>

@@ -1,0 +1,139 @@
+---
+// src/pages/solutions/[niche]-booking-system-in-[location].astro
+
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+// Ensure this matches the variable name in your src/data/pseo.js
+import { locations, saasNiches } from '../../data/pseo.js';
+
+// 1. GENERATE ALL PATHS (Product Combinations)
+export async function getStaticPaths() {
+  return saasNiches.flatMap(niche => 
+    locations.map(location => ({
+      params: { 
+        niche: niche.slug, 
+        location: location.slug 
+      },
+      props: { niche, location },
+    }))
+  );
+}
+
+// 2. GET DATA FOR THIS SPECIFIC PAGE
+const { niche, location } = Astro.props;
+
+// 3. DYNAMIC CONTENT LOGIC
+const title = `The #1 ${niche.name} Booking System in ${location.name} | Stegg`;
+const description = `Stop managing your ${niche.name} in ${location.name} via WhatsApp. ${niche.pain}. Automate bookings and payments with the Stegg System.`;
+---
+
+<Layout title={title} description={description}>
+    <Navbar />
+
+    <main class="pt-32 pb-20">
+        
+        <section class="max-w-7xl mx-auto px-6 mb-24 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#A3E635]/10 border border-[#A3E635]/20 text-[#A3E635] text-xs font-bold uppercase tracking-widest mb-8">
+                {niche.type} Automation: {location.name}
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
+                Automate Your <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500">{niche.name}.</span>
+            </h1>
+            
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Running a {niche.name.toLowerCase()} in <strong class="text-white">{location.name}</strong>? <br>
+                Stop dealing with <span class="text-red-400 border-b border-red-400/30">{niche.pain.toLowerCase()}</span>.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/60196700413?text=I%20want%20to%20automate%20my%20${niche.slug}%20in%20${location.slug}" class="px-8 py-4 bg-[#A3E635] text-black font-bold rounded-xl hover:bg-[#84cc16] transition-all shadow-[0_0_20px_rgba(163,230,53,0.2)]">
+                    Get System for {location.name}
+                </a>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 mb-32">
+            <div class="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6 opacity-50">
+                        <h3 class="text-xl font-bold text-slate-500 uppercase tracking-widest text-sm">The "WhatsApp" Way</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-500">
+                                <i data-lucide="x" class="w-5 h-5 shrink-0"></i>
+                                <span>"Is this slot available?" messages at 2 AM.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-500">
+                                <i data-lucide="x" class="w-5 h-5 shrink-0"></i>
+                                <span>Manually checking bank receipts and screenshots.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-500">
+                                <i data-lucide="x" class="w-5 h-5 shrink-0"></i>
+                                <span>Losing revenue from last-minute no-shows.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-[#A3E635]/10 blur-xl rounded-full"></div>
+                        <div class="relative bg-black/40 p-8 rounded-xl border border-[#A3E635]/30 shadow-2xl">
+                            <h3 class="text-xl font-bold text-white mb-6">The Stegg System</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-slate-200">
+                                    <i data-lucide="check" class="w-5 h-5 text-[#A3E635] shrink-0"></i>
+                                    <span><strong>{niche.benefit}</strong>.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-200">
+                                    <i data-lucide="check" class="w-5 h-5 text-[#A3E635] shrink-0"></i>
+                                    <span>Instant payment via ToyyibPay/FPX.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-slate-200">
+                                    <i data-lucide="check" class="w-5 h-5 text-[#A3E635] shrink-0"></i>
+                                    <span>Automated Telegram notifications for every booking.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center px-6 mb-32">
+            <h2 class="text-3xl font-bold text-white mb-6">Own the market in {location.name}.</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">
+                Your competitors in {location.name} are still using Excel and WhatsApp. 
+                Switch to Stegg and book more customers while you sleep.
+            </p>
+            <a href="https://wa.me/60196700413" class="inline-flex items-center gap-2 text-[#A3E635] hover:text-white transition-colors border-b border-[#A3E635] pb-1">
+                Book a Free Demo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 border-t border-white/10 pt-20">
+            <h3 class="text-white font-bold mb-8 text-center uppercase tracking-widest text-sm">Other Service Areas</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                {locations.filter(l => l.slug !== location.slug).map(l => (
+                    <a href={`/solutions/${niche.slug}-booking-system-in-${l.slug}`} class="px-4 py-2 rounded-lg bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 transition-colors text-xs border border-white/5">
+                        {niche.name} in {l.name}
+                    </a>
+                ))}
+            </div>
+        </section>
+
+    </main>
+
+    <Footer />
+
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        });
+    </script>
+</Layout>

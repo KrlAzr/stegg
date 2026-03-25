@@ -1,0 +1,42 @@
+---
+// src/pages/booking-system.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+// We removed the broken HowItWorks import here!
+---
+
+<Layout 
+    title="Stegg.dev | Booking Systems"
+    description="Custom booking systems built for local businesses."
+>
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-slate-100 blur-[150px]"></div>
+        <div class="absolute top-[20%] -right-[10%] w-[40%] h-[60%] rounded-full bg-[#2563EB]/10 blur-[150px] mix-blend-multiply"></div>
+    </div>
+
+    <Navbar />
+
+    <main class="relative z-10 pt-40 pb-32 min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 rounded-full text-slate-800 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+            <i data-lucide="wrench" class="w-4 h-4 text-[#2563EB]"></i>
+            Under Construction
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Booking System
+        </h1>
+        <p class="text-xl text-slate-500 max-w-2xl mx-auto font-medium">
+            We are currently engineering this page. Check back soon.
+        </p>
+    </main>
+
+    <Footer />
+
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) window.lucide.createIcons();
+        });
+    </script>
+</Layout>

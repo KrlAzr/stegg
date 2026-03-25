@@ -1,0 +1,60 @@
+---
+// src/pages/[location]/[service].astro
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+// Minimal static paths to satisfy the build while we rebuild the pSEO engine later
+export function getStaticPaths() {
+  return [
+    { params: { location: 'kuala-lumpur', service: 'web-design' } },
+    { params: { location: 'petaling-jaya', service: 'booking-system' } }
+  ];
+}
+
+const { location, service } = Astro.params;
+
+// Format the URL slugs into readable text
+const formattedLocation = location.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+const formattedService = service.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+---
+
+<Layout 
+    title={`${formattedService} in ${formattedLocation} | Stegg.dev`}
+    description={`High-performance ${formattedService.toLowerCase()} for businesses in ${formattedLocation}.`}
+>
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-slate-100 blur-[150px]"></div>
+        <div class="absolute top-[20%] -right-[10%] w-[40%] h-[60%] rounded-full bg-[#2563EB]/10 blur-[150px] mix-blend-multiply"></div>
+    </div>
+
+    <Navbar />
+
+    <main class="relative z-10 pt-40 pb-32 min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
+        <div class="inline-flex items-center gap-2 px-5 py-2 bg-white border border-slate-200 rounded-full text-slate-800 text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
+            <i data-lucide="target" class="w-4 h-4 text-[#2563EB]"></i>
+            Local Services
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            {formattedService} in {formattedLocation}
+        </h1>
+        
+        <p class="text-xl text-slate-500 max-w-2xl mx-auto font-medium mb-10">
+            We are currently updating our local programmatic SEO pages to match our new high-performance architecture. Check back soon!
+        </p>
+
+        <a href="/" class="px-8 py-4 bg-slate-900 text-white font-semibold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:bg-slate-800 tracking-tight text-lg">
+            Back to Homepage
+        </a>
+    </main>
+
+    <Footer />
+
+    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) window.lucide.createIcons();
+        });
+    </script>
+</Layout>
