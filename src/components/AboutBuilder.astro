@@ -2,40 +2,42 @@
 // src/components/AboutBuilder.astro
 ---
 
-<section id="about" class="max-w-4xl mx-auto px-6 mb-32 relative scroll-mt-32">
-    <div class="bg-slate-950 border border-slate-800 rounded-[3rem] p-10 md:p-16 shadow-[0_25px_50px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden group">
-        
-        <div class="absolute -top-32 -right-32 w-96 h-96 bg-[#2563EB]/20 blur-[100px] rounded-full pointer-events-none transition-colors duration-700"></div>
-        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-[#2563EB]/10 blur-[100px] rounded-full pointer-events-none"></div>
+<section id="about" class="reveal max-w-[1100px] mx-auto px-6 py-[120px] relative scroll-mt-32">
+    <div class="bg-[#111111] border border-[#222222] rounded-2xl p-10 md:p-16 relative overflow-hidden" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);">
 
-        <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-            
-            <div class="text-center mb-8">
-                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-2 tracking-tight">Khairul Azri</h3>
-                <p class="text-lg text-[#2563EB] font-semibold tracking-wide">Founder & Performance Marketer</p>
+        <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full pointer-events-none" style="background: rgba(37,99,235,0.12); filter: blur(100px);"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 rounded-full pointer-events-none" style="background: rgba(37,99,235,0.06); filter: blur(100px);"></div>
+
+        <div class="relative z-10 max-w-2xl">
+
+            <p class="font-mono text-[11px] tracking-[0.15em] text-[#444444] uppercase mb-8">The Builder</p>
+
+            <div class="mb-8">
+                <h3 class="text-[clamp(28px,3.5vw,40px)] font-[800] text-[#FAFAFA] mb-2 tracking-tight">Khairul Azri</h3>
+                <p class="text-base text-[#2563EB] font-semibold tracking-wide">Founder & Performance Marketer</p>
             </div>
-            
-            <div class="space-y-6 text-slate-300 leading-relaxed font-medium text-lg text-center md:text-left">
+
+            <div class="space-y-5 text-[17px] text-[#888888] leading-[1.7]">
                 <p>
                     With nearly a decade of experience building marketing funnels and automation systems, I've seen exactly where businesses bleed money. The biggest culprit? A beautiful but bloated website that takes too long to load.
                 </p>
                 <p>
-                    Most web design agencies focus entirely on aesthetics. I built Stegg.dev because I know that <strong class="text-white font-semibold">performance is marketing.</strong> Every line of code we write is engineered to lower your ad costs, stop mobile bounce rates, and make your funnel actually convert.
+                    Most web design agencies focus entirely on aesthetics. I built Stegg.dev because I know that <strong class="text-[#FAFAFA] font-semibold">performance is marketing.</strong> Every line of code we write is engineered to lower your ad costs, stop mobile bounce rates, and make your funnel actually convert.
                 </p>
             </div>
 
-            <div class="mt-10 flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-white/10 w-full">
-                <a href="https://wa.me/60196700413?text=Hi%20Khairul,%20I'd%20love%20to%20chat%20about%20fixing%20my%20website's%20performance." class="text-white font-bold hover:text-[#2563EB] transition-colors flex items-center gap-2 underline decoration-white/30 underline-offset-4 hover:decoration-[#2563EB]">
+            <div class="mt-10 flex flex-wrap items-center gap-8 pt-8 border-t border-[#222222]">
+                <a href="https://wa.me/60196700413?text=Hi%20Khairul,%20I'd%20love%20to%20chat%20about%20fixing%20my%20website's%20performance." class="text-[#FAFAFA] font-bold hover:text-[#2563EB] transition-colors flex items-center gap-2 underline decoration-[#333333] underline-offset-4 hover:decoration-[#2563EB]">
                     Chat on WhatsApp
                     <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                 </a>
-                
-                <a href="https://www.linkedin.com/in/khairulazri/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 font-semibold">
+
+                <a href="https://www.linkedin.com/in/khairulazri/" target="_blank" rel="noopener noreferrer" class="text-[#888888] hover:text-[#FAFAFA] transition-colors flex items-center gap-2 font-semibold text-sm">
                     <i data-lucide="linkedin" class="w-4 h-4"></i>
                     Connect on LinkedIn
                 </a>
             </div>
-            
+
         </div>
     </div>
 </section>

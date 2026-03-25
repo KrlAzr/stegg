@@ -2,110 +2,106 @@
 // src/components/ClientLogos.astro
 ---
 
-<section class="w-full py-24 bg-white border-y border-slate-200/50 relative z-10">
-    <div class="max-w-6xl mx-auto px-6">
-        
-        <div class="text-center mb-16">
-            <p class="text-sm font-bold text-[#2563EB] uppercase tracking-widest mb-3">
+<section id="client-logos" class="reveal w-full py-[120px] border-t border-[#222222] relative z-10">
+    <div class="max-w-[1100px] mx-auto px-6">
+
+        <div class="mb-16">
+            <p class="font-mono text-[11px] tracking-[0.15em] text-[#444444] uppercase mb-4">
                 Selected Works
             </p>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 class="text-[clamp(32px,4vw,48px)] font-[800] text-[#FAFAFA] tracking-tight leading-[1.1]">
                 Trusted by growing local businesses.
             </h2>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8 md:gap-10">
-            
-            <a href="https://nzcoffee.work/" target="_blank" rel="noopener noreferrer" class="group block rounded-[2.5rem] bg-[#FBFBFD] border border-slate-200 hover:bg-white hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-500 relative overflow-hidden flex flex-col">
-                
-                <div class="w-full h-56 md:h-64 bg-slate-100 relative overflow-hidden border-b border-slate-200 shrink-0">
-                    <div class="absolute top-0 left-0 w-full h-8 bg-white/80 backdrop-blur-md border-b border-slate-200/60 flex items-center px-4 gap-1.5 z-20">
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <a href="https://nzcoffee.work/" target="_blank" rel="noopener noreferrer" class="work-card group block rounded-2xl bg-[#111111] border border-[#222222] overflow-hidden flex flex-col">
+
+                <div class="w-full h-56 md:h-64 bg-[#0A0A0A] relative overflow-hidden border-b border-[#222222] shrink-0">
+                    <div class="absolute top-0 left-0 w-full h-8 bg-[#111111]/90 backdrop-blur-md border-b border-[#222222] flex items-center px-4 gap-1.5 z-20">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
                     </div>
-                    <img 
-                        src="/nz-coffee-hero.png" 
-                        alt="NZ Coffee Website Screenshot" 
-                        class="w-full h-full object-cover object-top pt-8 group-hover:scale-105 transition-transform duration-700 ease-out relative z-10" 
+                    <img
+                        src="/nz-coffee-hero.png"
+                        alt="NZ Coffee Website Screenshot"
+                        class="w-full h-full object-cover object-top pt-8 group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
                     />
                 </div>
 
                 <div class="p-8 md:p-10 relative flex-1 flex flex-col">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#2563EB]/5 blur-[40px] rounded-full pointer-events-none group-hover:bg-[#2563EB]/15 transition-colors duration-500"></div>
-
-                    <div class="flex items-start justify-between mb-8 relative z-10">
+                    <div class="flex items-start justify-between mb-6 relative z-10">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-full bg-white shadow-md shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center">
+                            <div class="w-11 h-11 rounded-full bg-[#1A1A1A] border border-[#333333] shrink-0 overflow-hidden flex items-center justify-center">
                                 <img src="/nz-coffee-logo.jpg" alt="NZ Coffee Logo" class="w-full h-full object-cover" />
                             </div>
-                            <span class="font-extrabold text-2xl text-slate-900 tracking-tighter">NZ Coffee</span>
+                            <span class="font-[800] text-xl text-[#FAFAFA] tracking-tight">NZ Coffee</span>
                         </div>
 
-                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300 shrink-0">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-400 group-hover:text-white transition-colors"></i>
+                        <div class="w-9 h-9 rounded-full bg-[#1A1A1A] border border-[#333333] flex items-center justify-center group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300 shrink-0">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#888888] group-hover:text-white transition-colors card-icon"></i>
                         </div>
                     </div>
 
                     <div class="relative z-10 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-tight">Custom Booking Engine</h3>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-8 text-lg flex-1">
+                        <h3 class="text-lg font-[700] text-[#FAFAFA] mb-2 tracking-tight">Custom Booking Engine</h3>
+                        <p class="text-[17px] text-[#888888] leading-[1.7] mb-6 flex-1">
                             Engineered a lightning-fast reservation system complete with a secure, real-time admin dashboard for seamless table and customer management.
                         </p>
-                        
+
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-200/60">Reservation System</span>
-                            <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-200/60">Admin Dashboard</span>
-                            <span class="px-3 py-1.5 bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold uppercase tracking-wider rounded-lg border border-[#2563EB]/20">pSEO</span>
+                            <span class="tag">Reservation System</span>
+                            <span class="tag">Admin Dashboard</span>
+                            <span class="tag-accent">pSEO</span>
                         </div>
                     </div>
                 </div>
             </a>
 
-            <a href="https://alexisemployment.com/" target="_blank" rel="noopener noreferrer" class="group block rounded-[2.5rem] bg-[#FBFBFD] border border-slate-200 hover:bg-white hover:shadow-[0_25px_50px_-15px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-500 relative overflow-hidden flex flex-col">
-                
-                <div class="w-full h-56 md:h-64 bg-slate-100 relative overflow-hidden border-b border-slate-200 shrink-0">
-                    <div class="absolute top-0 left-0 w-full h-8 bg-white/80 backdrop-blur-md border-b border-slate-200/60 flex items-center px-4 gap-1.5 z-20">
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+            <a href="https://alexisemployment.com/" target="_blank" rel="noopener noreferrer" class="work-card group block rounded-2xl bg-[#111111] border border-[#222222] overflow-hidden flex flex-col">
+
+                <div class="w-full h-56 md:h-64 bg-[#0A0A0A] relative overflow-hidden border-b border-[#222222] shrink-0">
+                    <div class="absolute top-0 left-0 w-full h-8 bg-[#111111]/90 backdrop-blur-md border-b border-[#222222] flex items-center px-4 gap-1.5 z-20">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#333333]"></div>
                     </div>
-                    <img 
-                        src="/alexis-hero.png" 
-                        alt="Alexis Employment Website Screenshot" 
-                        class="w-full h-full object-cover object-top pt-8 group-hover:scale-105 transition-transform duration-700 ease-out relative z-10" 
+                    <img
+                        src="/alexis-hero.png"
+                        alt="Alexis Employment Website Screenshot"
+                        class="w-full h-full object-cover object-top pt-8 group-hover:scale-105 transition-transform duration-700 ease-out relative z-10"
                     />
                 </div>
 
                 <div class="p-8 md:p-10 relative flex-1 flex flex-col">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-[#2563EB]/5 blur-[40px] rounded-full pointer-events-none group-hover:bg-[#2563EB]/15 transition-colors duration-500"></div>
-
-                    <div class="flex items-start justify-between mb-8 relative z-10">
+                    <div class="flex items-start justify-between mb-6 relative z-10">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl bg-white shadow-md shrink-0 border border-slate-100 flex items-center justify-center p-1.5 group-hover:-rotate-3 transition-transform duration-300">
+                            <div class="w-11 h-11 rounded-xl bg-[#1A1A1A] border border-[#333333] shrink-0 flex items-center justify-center p-1.5">
                                 <img src="/alexis-logo.png" alt="Alexis Employment Logo" class="w-full h-full object-contain" />
                             </div>
                             <div class="flex flex-col justify-center">
-                                <span class="font-black text-2xl text-slate-900 leading-none tracking-tight">ALEXIS</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">Employment</span>
+                                <span class="font-[900] text-xl text-[#FAFAFA] leading-none tracking-tight">ALEXIS</span>
+                                <span class="text-[10px] font-bold text-[#888888] uppercase tracking-widest mt-0.5">Employment</span>
                             </div>
                         </div>
 
-                        <div class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300 shrink-0">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5 text-slate-400 group-hover:text-white transition-colors"></i>
+                        <div class="w-9 h-9 rounded-full bg-[#1A1A1A] border border-[#333333] flex items-center justify-center group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300 shrink-0">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#888888] group-hover:text-white transition-colors card-icon"></i>
                         </div>
                     </div>
 
                     <div class="relative z-10 flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 tracking-tight">Agency Portal & Directory</h3>
-                        <p class="text-slate-500 font-medium leading-relaxed mb-8 text-lg flex-1">
+                        <h3 class="text-lg font-[700] text-[#FAFAFA] mb-2 tracking-tight">Agency Portal & Directory</h3>
+                        <p class="text-[17px] text-[#888888] leading-[1.7] mb-6 flex-1">
                             Built a high-performance agency website featuring a dynamic employment directory and secure login/logout functionality for user management.
                         </p>
-                        
+
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-200/60">Dynamic Directory</span>
-                            <span class="px-3 py-1.5 bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-200/60">Auth System</span>
-                            <span class="px-3 py-1.5 bg-[#2563EB]/10 text-[#2563EB] text-xs font-bold uppercase tracking-wider rounded-lg border border-[#2563EB]/20">pSEO</span>
+                            <span class="tag">Dynamic Directory</span>
+                            <span class="tag">Auth System</span>
+                            <span class="tag-accent">pSEO</span>
                         </div>
                     </div>
                 </div>
@@ -114,3 +110,49 @@
         </div>
     </div>
 </section>
+
+<style>
+    .work-card {
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    border-color 0.2s ease,
+                    box-shadow 0.3s ease;
+    }
+    .work-card:hover {
+        transform: translateY(-4px);
+        border-color: #333333;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.04),
+                    0 0 0 1px rgba(37,99,235,0.15),
+                    0 20px 40px -10px rgba(0,0,0,0.5);
+        background: #1A1A1A;
+    }
+    .work-card:hover .card-icon {
+        transform: rotate(-5deg);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: #1A1A1A;
+        color: #888888;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border-radius: 6px;
+        border: 1px solid #2A2A2A;
+    }
+    .tag-accent {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(37,99,235,0.1);
+        color: #2563EB;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border-radius: 6px;
+        border: 1px solid rgba(37,99,235,0.2);
+    }
+</style>
