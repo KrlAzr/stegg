@@ -1,14 +1,24 @@
 ---
 // src/components/Hero.astro
+import NoiseGradient from './NoiseGradient.astro';
 ---
 
-<section class="relative min-h-screen flex items-center overflow-hidden">
+<section class="relative min-h-screen flex items-center overflow-hidden" style="background: radial-gradient(ellipse 40% 40% at 80% 60%, rgba(139,92,246,0.08) 0%, transparent 60%), radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37,99,235,0.15) 0%, transparent 70%), linear-gradient(180deg, #0D1117 0%, #0F1117 100%);">
+
+    <!-- Noise aurora background -->
+    <NoiseGradient
+        colors={["#2563EB", "#6366F1", "#0EA5E9"]}
+        width="100%"
+        height="600px"
+        opacity={15}
+        style="-webkit-mask: linear-gradient(to bottom, black 60%, transparent 100%); mask: linear-gradient(to bottom, black 60%, transparent 100%);"
+    />
 
     <!-- Grid background -->
     <div class="absolute inset-0 hero-grid pointer-events-none z-0"></div>
 
     <!-- Radial fade over grid -->
-    <div class="absolute inset-0 pointer-events-none z-[1]" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, #0A0A0A 80%);"></div>
+    <div class="absolute inset-0 pointer-events-none z-[1]" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, #0F1117 80%);"></div>
 
     <!-- Blue accent glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full pointer-events-none z-[2]" style="background: rgba(37,99,235,0.08); filter: blur(120px);"></div>
@@ -32,7 +42,7 @@
         <!-- Main heading -->
         <h1 class="font-[800] leading-[0.95] tracking-tight mb-8" style="font-size: clamp(56px, 8vw, 96px);">
             <span class="block text-[#FAFAFA] overflow-hidden">
-                <span class="hero-word inline-block">Sub-second</span>&nbsp;<span class="hero-word inline-block">websites</span>&nbsp;<span class="hero-word inline-block">engineered</span>
+                <span class="hero-word inline-block">Sub-second</span>&nbsp;<span class="hero-word inline-block">websites</span>&nbsp;<span class="hero-word inline-block gradient-word">engineered</span>
             </span>
             <span class="block text-[#888888] overflow-hidden">
                 <span class="hero-word inline-block">for</span>&nbsp;<span class="hero-word inline-block">maximum</span>&nbsp;<span class="hero-word inline-block">ROI.</span>
@@ -61,6 +71,7 @@
 <style>
     /* Subtle grid pattern */
     .hero-grid {
+        opacity: 0.4;
         background-image:
             linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
@@ -118,6 +129,13 @@
     }
     .cta-ghost:hover  { transform: scale(1.02); background: #1A1A1A; color: #FAFAFA; }
     .cta-ghost:active { transform: scale(0.97); transition-duration: 0.1s; }
+
+    .gradient-word {
+        background: linear-gradient(135deg, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 </style>
 
 <script is:inline>

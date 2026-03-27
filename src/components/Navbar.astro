@@ -2,7 +2,7 @@
 // src/components/Navbar.astro
 ---
 
-<header class="fixed w-full top-0 z-50 border-b border-[#1A1A1A]" style="background: rgba(10,10,10,0.8); backdrop-filter: blur(12px);">
+<header class="fixed w-full top-0 z-50 border-b border-[#E5E7EB]" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);">
   <div class="max-w-[1100px] mx-auto px-6">
     <div class="flex justify-between items-center h-16">
 
@@ -15,33 +15,33 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 h-full">
-        <a href="/#why-stegg" class="nav-link text-sm font-medium text-[#888888] hover:text-[#FAFAFA] transition-colors duration-200">Why Stegg</a>
-        <a href="/#pricing" class="nav-link text-sm font-medium text-[#888888] hover:text-[#FAFAFA] transition-colors duration-200">Pricing</a>
-        <a href="/#about" class="nav-link text-sm font-medium text-[#888888] hover:text-[#FAFAFA] transition-colors duration-200">About</a>
+        <a href="/#why-stegg" class="nav-link text-sm font-medium text-[#6B7280] hover:text-[#0A0A0A] transition-colors duration-200">Why Stegg</a>
+        <a href="/#pricing" class="nav-link text-sm font-medium text-[#6B7280] hover:text-[#0A0A0A] transition-colors duration-200">Pricing</a>
+        <a href="/#about" class="nav-link text-sm font-medium text-[#6B7280] hover:text-[#0A0A0A] transition-colors duration-200">About</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-4">
         <a href="https://wa.me/60196700413?text=Hi%20Stegg,%20I'm%20interested%20in%20your%20services."
-           class="nav-cta px-5 py-2 border border-[#333333] bg-transparent text-[#FAFAFA] text-sm font-semibold rounded-lg hover:bg-[#1A1A1A] transition-all duration-200">
+           class="nav-cta px-5 py-2 border border-[#D1D5DB] bg-transparent text-[#0A0A0A] text-sm font-semibold rounded-lg hover:bg-[#F9FAFB] transition-all duration-200">
           Let's Talk
         </a>
       </div>
 
-      <button id="menu-btn" class="md:hidden p-2 text-[#888888] hover:text-[#FAFAFA] hover:bg-[#1A1A1A] rounded-lg transition-colors focus:outline-none">
+      <button id="menu-btn" class="md:hidden p-2 text-[#6B7280] hover:text-[#0A0A0A] hover:bg-[#F3F4F6] rounded-lg transition-colors focus:outline-none">
         <i data-lucide="menu" class="w-5 h-5"></i>
       </button>
 
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-[#1A1A1A] bg-[#0A0A0A] absolute w-full left-0 shadow-2xl">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#E5E7EB] bg-white absolute w-full left-0 shadow-lg">
     <div class="flex flex-col p-4 space-y-1">
-      <a href="/#why-stegg" class="text-[#888888] hover:text-[#FAFAFA] font-medium py-3 px-4 hover:bg-[#111111] rounded-lg transition-colors">Why Stegg</a>
-      <a href="/#pricing" class="text-[#888888] hover:text-[#FAFAFA] font-medium py-3 px-4 hover:bg-[#111111] rounded-lg transition-colors">Pricing</a>
-      <a href="/#about" class="text-[#888888] hover:text-[#FAFAFA] font-medium py-3 px-4 hover:bg-[#111111] rounded-lg transition-colors">About</a>
+      <a href="/#why-stegg" class="text-[#6B7280] hover:text-[#0A0A0A] font-medium py-3 px-4 hover:bg-[#F9FAFB] rounded-lg transition-colors">Why Stegg</a>
+      <a href="/#pricing" class="text-[#6B7280] hover:text-[#0A0A0A] font-medium py-3 px-4 hover:bg-[#F9FAFB] rounded-lg transition-colors">Pricing</a>
+      <a href="/#about" class="text-[#6B7280] hover:text-[#0A0A0A] font-medium py-3 px-4 hover:bg-[#F9FAFB] rounded-lg transition-colors">About</a>
 
-      <div class="pt-4 mt-2 border-t border-[#1A1A1A]">
-          <a href="https://wa.me/60196700413?text=Hi%20Stegg,%20I'm%20interested%20in%20your%20services." class="block w-full text-center px-6 py-3 border border-[#333333] text-[#FAFAFA] font-semibold rounded-lg hover:bg-[#1A1A1A] transition-colors">
+      <div class="pt-4 mt-2 border-t border-[#E5E7EB]">
+          <a href="https://wa.me/60196700413?text=Hi%20Stegg,%20I'm%20interested%20in%20your%20services." class="block w-full text-center px-6 py-3 border border-[#D1D5DB] text-[#0A0A0A] font-semibold rounded-lg hover:bg-[#F9FAFB] transition-colors">
             Let's Talk
           </a>
       </div>
@@ -59,6 +59,15 @@
 </style>
 
 <script>
+  const navbar = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 1px 0 #E5E7EB, 0 4px 24px rgba(0,0,0,0.06)';
+    } else {
+      navbar.style.boxShadow = '';
+    }
+  }, { passive: true });
+
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
